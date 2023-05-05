@@ -1,47 +1,51 @@
+/* body {
+    display: flex;
+} */
+
+#totoro-background {
+    z-index: -1;
+    margin: 0px;
+    min-width:600px;
+    max-width: 100%;
+    position: fixed;
+    opacity: 60%;
+} 
+
+
+
 body {
     padding: 0px;
     margin: 0;
-    width: 1500px;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
+    font-family: 'Kanit';
+    font-style: normal;
 }
 
 header {
+    z-index: 3;
     background: #329EA1;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-    width: 1500px;
-    height: 1034px;
+    width: 100%;
+    height: 10%;
     margin: 0px;
     display: flex;
     flex-direction: column;
-    flex-flow: row wrap;
     min-width: auto;
     position: fixed;
-
-
-
-}
-
-#studio-ghibli {
-    width: 100%;
-    height: 46px;
-    font-family: 'Kanit';
-    font-style: normal;
     font-weight: 600;
+    font-style: normal;
     font-size: 32px;
-    line-height: 48px;
     text-align: center;
+    line-height: 48px;
     letter-spacing: 0.2em;
-    height: 73px;
     color: #E9E3E3;
-    display: flex;
-    flex-direction: column;
-
 }
 
 #totoro-background {
     z-index: -1;
-    position: absolute;
+    position: fixed;
     opacity: 50%;
     min-width: 100%;
     margin: 0px;
@@ -51,17 +55,22 @@ header {
 
 }
 
-.sort-area {
-    z-index: 1;
+.movie-list{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    font-family: 'Jaldi';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 27px;
-    text-align: center;
-    letter-spacing: 0.3em;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+#database-container{
+    width: 1000px;
+}
+
+
+.sort-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: fit-content;
 }
