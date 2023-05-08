@@ -9,7 +9,11 @@ console.log(ghibliData, data);
 //const film = data.result; este no nos funcionó, pero lo dejo como registro
 
 //------------SECCIÓN CONSTANTES QUE TRAEN LA DATA
-
+const searchButton = document.getElementById('search-button');
+searchButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  console.log('hihihi');
+});
 //declaramos la constante que nos guarda (o accede a) las películas
 const movie = data.films;
 console.log(movie);
@@ -69,6 +73,3 @@ for(let i = 0; i < movie.length; i++) {
   //dataBaseContainer.appendChild(posterGallery);
 
 }
-
-
-
