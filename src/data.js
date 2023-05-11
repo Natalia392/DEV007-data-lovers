@@ -45,6 +45,7 @@ export const filterCharacter = (films) => {
   return characters;
 };
 
+//Devuelve la lista de localidades en la película (name + img)
 export const filterLocalities = (films) => {
   let localities = [];
 
@@ -56,6 +57,7 @@ export const filterLocalities = (films) => {
 
   return localities;
 };
+
 //Devuelve la lista de personajes
   
 
