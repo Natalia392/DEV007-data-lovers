@@ -62,17 +62,13 @@ console.log(filterMovie, propertyValue);*/
   console.log(filtrarDirector)
 }*/
 
-/*export const filterDirector = (data, seleccionDirector) => {
-  const filtro = data.films.filter(x=>x.director.includes(seleccionDirector))
-  console.log(filtro)
-}
 
 
 export const filterMovie = (data, propertyValue) => {
   const films = data.filter(movie => movie.title === propertyValue);
   return films;
 };
-*/
+
 //Devuelve la lista de personajes
   
 
