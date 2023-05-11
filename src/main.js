@@ -1,24 +1,32 @@
 // eslint-disable-next-line no-unused-vars
-import { ghibliData, filterCharacter, filterLocalities} from './data.js'; // importa la función...
+import { ghibliData, filterCharacter, filterLocalities, filterDirector} from './data.js'; // importa la función...
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(ghibliData, data);
 //------------SECCIÓN CONSTANTES de LA DATA
 
 
 // Manipulación del DOM con los nombres obtenidos:
 
 const films = data.films; //declaramos la constante que nos guarda (o accede a) las películas
+
 //console.log(films);
+
 
 
 //------------SECCIÓN CONSTANTES DE INTERACCIÓN CON DOM
 
 const dataBaseContainer = document.getElementById('database-container'); //Declaración de la variable que contendra los elementos a insertar en el hmtl
 
-//const searchButton = document.getElementById('search-button'); //Constante del botón de búsqueda
+//------------LA CONSTANTE PARA OCULTAR LA SECCIÓN DE BIENVENIDA
+const hideWelcome = document.querySelector('.welcome'); //Declaramos constante que guarda la sección welcome TENEMOS QUE MOVERLA AL BOTON QUE CORRESPONDA
+hideWelcome.style.display = 'none'; //ocultamos sección welcome
+
+
+
+//---------BOTONES
+const searchButton = document.getElementById('search-button'); //Constante del botón de búsqueda
 
 // eslint-disable-next-line no-unused-vars
 const localityButton = document.getElementById('locality-button'); //constante del botón de localidades
@@ -29,10 +37,6 @@ const charButton = document.getElementById('character-button'); //Constante del 
 // eslint-disable-next-line no-unused-vars
 const directorButton = document.getElementById('director-button'); //Constante del botón de directores
 
-
-//------------LA CONSTANTE PARA OCULTAR LA SECCIÓN DE BIENVENIDA
-const hideWelcome = document.querySelector('.welcome'); //Declaramos constante que guarda la sección welcome
-hideWelcome.style.display = 'none'; //ocultamos sección welcome
 
 
 //INTERMINADO
@@ -59,7 +63,7 @@ charButton.addEventListener('click', (event) => {
       dataBaseContainer.appendChild(charDiv);
     });
   });
-
+  
   localityButton.addEventListener('click', (event) => {
     event.preventDefault(event);
 
@@ -82,13 +86,28 @@ charButton.addEventListener('click', (event) => {
       //se muestra en consola
       console.log(filterLocalities(films.location))
   });
-//_---------------------------------------------------------------------------------------------
+//_-----------------FILTERDIRECTOR
 
 directorButton.addEventListener('click', (event) => {
   event.preventDefault();
-  const directoresFilter = searchDirector(films, 'Hayao Miyazaki')
-  console.log(directoresFilter);
+  filterDirector();
+  //Vaciar contenedor
+  dataBaseContainer.innerHTML = "";
+  //Declara funcion con parametro
+  const directors = filterDirector(films);
+  //Recorre los directores
+  directors.filter((directores) => {
+    // Crear un div para cada director
+    const dirDiv = document.createElement('div');
 
+    // Inyectar el HTML para mostrar el nombre y la imagen del director
+    dirDiv.innerHTML = `
+      <h4 class="director-name" id="${directores.name}">${directores.name}</h4>
+    `;
+
+    // Agregar el div del director al dataBaseContainer
+    dataBaseContainer.appendChild(dirDiv);
+  });
 });
 
 
