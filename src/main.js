@@ -18,8 +18,11 @@ const films = data.films; //declaramos la constante que nos guarda (o accede a) 
 const dataBaseContainer = document.getElementById('database-container'); //Declaración de la variable que contendra los elementos a insertar en el hmtl
 
 //------------LA CONSTANTE PARA OCULTAR LA SECCIÓN DE BIENVENIDA
-const hideWelcome = document.querySelector('.welcome'); //Declaramos constante que guarda la sección welcome TENEMOS QUE MOVERLA AL BOTON QUE CORRESPONDA
-hideWelcome.style.display = 'none'; //ocultamos sección welcome
+/*const welcomePage = document.querySelector('.welcome');
+welcomePage.style.display='block';*/
+
+const hideSort_area = document.querySelector('.sort-area'); //Declaramos constante que guarda la sección welcome TENEMOS QUE MOVERLA AL BOTON QUE CORRESPONDA
+hideSort_area.style.display = 'none'; //ocultamos sección welcome
 
 
 

@@ -57,8 +57,82 @@ header {
 h4{
     margin: 5%;
     cursor: pointer;
+    max-height: 100px;
+}
+.welcome div{
+    display: block;
+    z-index: 2;
+}
+.welcome-container{
+    align-content: start;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-evenly;
+    flex-wrap: wrap;
+    width: 800px;
+    background: rgba(228, 194, 165, 0.772);
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    border-radius: 10px;
 }
 
+.welcome-title, .welcome-p, .search-by-word{
+    width: 811px;
+    margin: 2%;
+    max-height: 300px;
+    max-width: 600px;
+height: 111px;
+padding: 5%;
+font-family: 'Kanit';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 48px;
+text-align: center;
+letter-spacing: 0.15em;
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.welcome-title .welcome-p{
+    justify-content: center;
+    align-items: center;
+    padding-top: 0%;
+}
+.welcome-title{
+    margin-bottom: 0%;
+    height: 5%;
+padding: 5%;
+font-family: 'Kanit';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 48px;
+text-align: center;
+letter-spacing: 0.15em;
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.welcome-p{
+padding: 5%;
+font-family: 'Kanit';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 48px;
+text-align: center;
+letter-spacing: 0.15em;
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.search-by-word{
+    max-width: 650px;
+}
 .movie-list {
     display: flex;
     flex-direction: column;
@@ -80,6 +154,7 @@ h4{
     border-color: rgba(0, 0, 0, 0.5);
     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
     border-radius: 10px;
+    visibility: hidden;
 }
 
 #database-container div {
@@ -220,6 +295,10 @@ button {
 
     color: #FFFFFF;
 }
+.nav-buttons :hover{
+    cursor: pointer;
+    background: black;
+}
 
 #search-button:hover {
     cursor: pointer;
@@ -231,4 +310,5 @@ button {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
 }
