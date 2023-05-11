@@ -1,23 +1,26 @@
 // eslint-disable-next-line no-unused-vars
-import { ghibliData, filterDirector, filterMovie } from './data.js'; // importa la función...
+import {filterDirector, filterMovie, filterCharacter} from './data.js'; // importa la función...
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(ghibliData, data);
+console.log(data);
 
 
 
 //------------SECCIÓN CONSTANTES de LA DATA
 
-const films = data.films; //declaramos la constante que nos guarda (o accede a) las películas
-console.log(films);
+const ghibliData = data;
 
-console.log(data);
-console.log(filterDirector(data, 'Miyazaki'));
+const films = data.films; //declaramos la constante que nos guarda (o accede a) las películas
+console.log(films[0].people[0].name);
+
+console.log(ghibliData);
+console.log(filterDirector(films, 'Hayao Miyazaki')); //sigue sin funcionarnos 
 console.log(filterMovie(films,'Castle in the Sky'));
 
-const characters = films.people;
+
+const characters = filterCharacter(films);
 console.log(characters);
 
 
@@ -52,6 +55,13 @@ searchButton.addEventListener('click', (event) => {
 
 });
 
+//botón de personajes
+charButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  const characters = filterCharacter(films);
+  console.log(characters);
+
+});
 
 //-----------------USAR FOREACH PARA IMPLEMENTAR DATA DE LAS PELÍCULAS EN EL CONTENEDOR DE DATABASE
 
