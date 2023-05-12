@@ -102,7 +102,7 @@ localityButton.addEventListener('click', (event) => {
   //se muestra en consola
   console.log(filterLocalities(films.location))
 });
-//_-----------------FILTERDIRECTOR
+//-----------------FILTERDIRECTOR
 
 directorButton.addEventListener('click', (event) => {
   event.preventDefault();
