@@ -29,7 +29,7 @@ export const filterLocalities = (films) => {
       localities.push({ name: localityObjects.name, img: localityObjects.img });
     }
   }
-
+console.log(localities);
   return localities;
 };
 

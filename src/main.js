@@ -20,10 +20,10 @@ const dataBaseContainer = document.getElementById('database-container'); //Decla
 
 
 //------------OCULTAR Y MOSTRAR SECCIONES 
-const welcomeSection = document.querySelector('.welcome'); //Declaramos constante que guarda la sección welcome TENEMOS QUE MOVERLA AL BOTON QUE CORRESPONDA
+const welcomeSection = document.getElementById("welcome-page"); //Declaramos constante que guarda la sección welcome TENEMOS QUE MOVERLA AL BOTON QUE CORRESPONDA
 
 
-const sortAreaSection = document.querySelector('.sort-area');
+const sortAreaSection = document.getElementById('sortArea');
 
 
 function hideWelcome() {
@@ -35,7 +35,7 @@ function hideSortArea() {
   welcomeSection.style.display = 'block';
   sortAreaSection.style.display = 'none';
 }
-
+hideSortArea();
 
 //---------BOTONES
 // eslint-disable-next-line no-unused-vars
@@ -88,6 +88,7 @@ localityButton.addEventListener('click', (event) => {
   //Declara funcion con parametro
   const localities = filterLocalities(films);
   //Recorre los characters
+  console.log(localities);
   localities.forEach((location) => {
     //Crea el div
     const localDiv = document.createElement('div');
