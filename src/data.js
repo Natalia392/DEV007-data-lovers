@@ -34,16 +34,23 @@ console.log(localities);
 };
 
 export const filterDirector = (films) => {
-  const directores = [];
+  const directors = [];
 
-  for (const film of Object.values(films)) {
-    for (const directors of film.director) {
-      directores.push({ name: directors.name});
+  for (const film of films) {
+    const director = film.director;
+    if (directors.indexOf(director) === -1) {
+      directors.push(director);
     }
   }
 
-  return directores;
+  return directors;
 };
+
+/*export const filterDirector = (films) => {
+ const directorNames = 
+ films.filter((directors) => directors.indexOf(films[director]) === -1) 
+ console.log(directorNames);
+};*/
 
 /*export const anotherExample = () => {
   return 'OMG';

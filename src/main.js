@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { ghibliData, filterCharacter, filterLocalities, filterDirector} from './data.js'; // importa la función...
+import { ghibliData, filterCharacter, filterLocalities, filterDirector } from './data.js'; // importa la función...
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -8,10 +8,11 @@ import data from './data/ghibli/ghibli.js';
 
 
 const films = data.films; //declaramos la constante que nos guarda (o accede a) las películas
-
+console.log(films.director);
 //console.log(films);
 
-
+const directors = filterDirector(films);
+console.log(directors);
 
 //------------SECCIÓN CONSTANTES DE INTERACCIÓN CON DOM
 
@@ -28,7 +29,7 @@ const sortAreaSection = document.getElementById('sortArea');
 
 function hideWelcome() {
   sortAreaSection.style.display = 'block';
-  welcomeSection.style.display = 'none'; 
+  welcomeSection.style.display = 'none';
 }
 
 function hideSortArea() {
@@ -74,14 +75,15 @@ charButton.addEventListener('click', (event) => {
         <h4 class="character-name" id="${character.name}">${character.name}</h4>
         <img class="character-img" src="${character.img}" alt="${character.img}">
       `;
-  
+
     // Agregar el div del personaje al databaseContainer
     dataBaseContainer.appendChild(charDiv);
   });
 });
-  
+
 localityButton.addEventListener('click', (event) => {
   event.preventDefault(event);
+  hideWelcome();
 
   //Vaciar contenedor
   dataBaseContainer.innerHTML = "";
@@ -101,48 +103,51 @@ localityButton.addEventListener('click', (event) => {
     dataBaseContainer.appendChild(localDiv);
   });
   //se muestra en consola
-  console.log(filterLocalities(films.location))
+  //console.log(filterLocalities(films.location))
 });
 //_-----------------FILTERDIRECTOR
 
 directorButton.addEventListener('click', (event) => {
   event.preventDefault();
-  filterDirector();
+  hideWelcome();
+
   //Vaciar contenedor
   dataBaseContainer.innerHTML = "";
   //Declara funcion con parametro
-  const directors = filterDirector(films);
-  //Recorre los directores
-  directors.filter((directores) => {
-    // Crear un div para cada director
-    const dirDiv = document.createElement('div');
+  //const arrayDir = directors.split();
+  console.log(directors);
 
-    // Inyectar el HTML para mostrar el nombre y la imagen del director
-    dirDiv.innerHTML = `
-      <h4 class="director-name" id="${directores.name}">${directores.name}</h4>
-    `;
+    const tituloDirector = document.getElementById('director-list');
+    tituloDirector.innerHTML = "Director";
+    directors.forEach(() => {
+      //Crea el div
 
-    // Agregar el div del director al dataBaseContainer
-    dataBaseContainer.appendChild(dirDiv);
-  });
-});
+      dataBaseContainer.innerHTML = `
+    <li class="director-name" id="${directors}">${directors}</li>
+  `;
+      //Se envía al div
+      dataBaseContainer.appendChild(tituloDirector);
+      
+    });
+  }
+);
 
 
 //-----------------USAR FOREACH PARA IMPLEMENTAR DATA DE LAS PELÍCULAS EN EL CONTENEDOR DE DATABASE
 
 
 //botón de personajes
-charButton.addEventListener('click', (event) => {
+/*charButton.addEventListener('click', (event) => {
   event.preventDefault();
   const characters = filterCharacter(films);
   console.log(characters);
 
-});
+});*/
 
 //-----------------FUNCIÓN PARA MOSTRAR DATA DE LAS PELÍCULAS EN EL CONTENEDOR DE DATABASE
 
 
-function moviesDisplay () {
+function moviesDisplay() {
   hideWelcome();
 
   //Vaciamos el contenedor de contenido 
@@ -153,17 +158,17 @@ function moviesDisplay () {
 
     //Se crea el div que contendrá el título de cada película y su respectiva portada
     const movieDiv = document.createElement('div');
-  
+
     //Se usar innerHTML para crear la estructura hmtl
     movieDiv.innerHTML +=
       `<h4 class="movie-title" id="${movie.title}">${movie.title}<h4>
     <img class="movie-poster" src="${movie.poster}" id = "${movie.id}">`
-  
+
     //se usa la función appendChild sobre el dataBaseContainer para introducir en éste el div recién creado
     dataBaseContainer.appendChild(movieDiv);
-  
+
   });
-  
+
 }
 
 //se llama a la función moviesDisplay una vez que se hace click en el botón de películas.
@@ -174,3 +179,6 @@ moviesButton.addEventListener('click', () => {
 welcomeButton.addEventListener('click', () => {
   hideSortArea();
 });
+
+
+
