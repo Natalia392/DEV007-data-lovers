@@ -29,20 +29,15 @@ export const filterLocalities = (films) => {
       localities.push({ name: localityObjects.name, img: localityObjects.img });
     }
   }
-console.log(localities);
+  console.log(localities);
   return localities;
 };
 
 export const filterDirector = (films) => {
-  const directores = [];
+  for (const film of films) {
+    const directorNames = directorNames.filter(directors => directors.indexOf(film.director) === -1);
 
-  for (const film of Object.values(films)) {
-    for (const directors of film.director) {
-      directores.push({ name: directors.name});
-    }
   }
-
-  return directores;
 };
 
 /*export const anotherExample = () => {
@@ -64,13 +59,20 @@ console.log(filterMovie, propertyValue);*/
 
 
 
-export const filterMovie = (data, propertyValue) => {
-  const films = data.filter(movie => movie.title === propertyValue);
+export const searchByTitle = (data, propertyValue) => {
+  const films = data.filter(movie => movie.title.toLowerCase() === propertyValue.toLowerCase());
   return films;
 };
 
+
+
+
+
 //Devuelve la lista de personajes
-  
+export const lookingforCharacter = (data, propertyValue) => {
+  const characterByName = data.filter(characterName => characterName.name === propertyValue);
+  return characterByName;
+};
 
 
 //funcion para mostrar personaje según película
