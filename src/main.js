@@ -8,11 +8,16 @@ import data from './data/ghibli/ghibli.js';
 
 
 const films = data.films; //declaramos la constante que nos guarda (o accede a) las películas
-console.log(films.director);
-//console.log(films);
 
 const directors = filterDirector(films);
 console.log(directors);
+const localities = filterLocalities(films);
+const characters = filterCharacter(films);
+
+//console.log(films);
+
+/*console.log(searchByTitle(films, 'Castle in the Sky'));
+console.log(searchByTitle(films, 'castle in the sky'));*/
 
 //------------SECCIÓN CONSTANTES DE INTERACCIÓN CON DOM
 
@@ -53,100 +58,11 @@ const moviesButton = document.getElementById('movies-button');
 
 const welcomeButton = document.getElementById('welcome-button');
 
-//INTERMINADO
+const searchInput = document.getElementById('search-input');
 
-//Se inicializa con el click
-charButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  //cambia de sección para mostrar la sección que anida el database-container
-  hideWelcome();
+//------------------FUNCIONES MOSTRADORAS 
 
-  //Vaciar contenedor
-  dataBaseContainer.innerHTML = "";
-  //Declara funcion con parametro
-  const characters = filterCharacter(films);
-  //Recorre los characters
-  characters.forEach((character) => {
-    // Crear un div para cada personaje
-    const charDiv = document.createElement('div');
-
-    // Inyectar el HTML para mostrar el nombre y la imagen del personaje
-    charDiv.innerHTML = `
-        <h4 class="character-name" id="${character.name}">${character.name}</h4>
-        <img class="character-img" src="${character.img}" alt="${character.img}">
-      `;
-
-    // Agregar el div del personaje al databaseContainer
-    dataBaseContainer.appendChild(charDiv);
-  });
-});
-
-localityButton.addEventListener('click', (event) => {
-  event.preventDefault(event);
-  hideWelcome();
-
-  //Vaciar contenedor
-  dataBaseContainer.innerHTML = "";
-  //Declara funcion con parametro
-  const localities = filterLocalities(films);
-  //Recorre los characters
-  console.log(localities);
-  localities.forEach((location) => {
-    //Crea el div
-    const localDiv = document.createElement('div');
-    //Inyecta html name + img
-    localDiv.innerHTML = `
-          <h4 class="local-name" id="${location.name}">${location.name}</h4>
-          <img class="local-img" src="${location.img}" id=${location.name}>
-        `;
-    //Se envía al div
-    dataBaseContainer.appendChild(localDiv);
-  });
-  //se muestra en consola
-  //console.log(filterLocalities(films.location))
-});
-//_-----------------FILTERDIRECTOR
-
-directorButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  hideWelcome();
-
-  //Vaciar contenedor
-  dataBaseContainer.innerHTML = "";
-  //Declara funcion con parametro
-  //const arrayDir = directors.split();
-  console.log(directors);
-
-    const tituloDirector = document.getElementById('director-list');
-    tituloDirector.innerHTML = "Director";
-    directors.forEach(() => {
-      //Crea el div
-
-      dataBaseContainer.innerHTML = `
-    <li class="director-name" id="${directors}">${directors}</li>
-  `;
-      //Se envía al div
-      dataBaseContainer.appendChild(tituloDirector);
-      
-    });
-  }
-);
-
-
-//-----------------USAR FOREACH PARA IMPLEMENTAR DATA DE LAS PELÍCULAS EN EL CONTENEDOR DE DATABASE
-
-
-//botón de personajes
-/*charButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  const characters = filterCharacter(films);
-  console.log(characters);
-
-});*/
-
-//-----------------FUNCIÓN PARA MOSTRAR DATA DE LAS PELÍCULAS EN EL CONTENEDOR DE DATABASE
-
-
+//FUNCIÓN PARA MOSTRAR PELÍCULAS
 function moviesDisplay() {
   hideWelcome();
 
@@ -170,11 +86,129 @@ function moviesDisplay() {
   });
 
 }
+//Función para mostrar personajes
+function characterDisplay() {
 
-//se llama a la función moviesDisplay una vez que se hace click en el botón de películas.
+  hideWelcome();
+
+  //Vaciar contenedor
+  dataBaseContainer.innerHTML = "";
+
+  //Recorre los characters
+  characters.forEach((character) => {
+    // Crear un div para cada personaje
+    const charDiv = document.createElement('div');
+
+    // Inyectar el HTML para mostrar el nombre y la imagen del personaje
+    charDiv.innerHTML = `
+      <h4 class="character-name" id="${character.name}">${character.name}</h4>
+      <img class="character-img" src="${character.img}" alt="${character.img}">
+    `;
+
+    // Agregar el div del personaje al databaseContainer
+    dataBaseContainer.appendChild(charDiv);
+  });
+
+}
+//---FACTORIZACIÓN PENDIENTE
+localityButton.addEventListener('click', (event) => {
+  event.preventDefault(event);
+  hideWelcome();
+
+  //Vaciar contenedor
+  dataBaseContainer.innerHTML = "";
+  //Declara funcion con parametro
+  //const localities = filterLocalities(films);
+  //Recorre los characters
+  console.log(localities);
+  localities.forEach((location) => {
+    //Crea el div
+    const localDiv = document.createElement('div');
+    //Inyecta html name + img
+    localDiv.innerHTML = `
+          <h4 class="local-name" id="${location.name}">${location.name}</h4>
+          <img class="local-img" src="${location.img}" id=${location.name}>
+        `;
+    //Se envía al div
+    dataBaseContainer.appendChild(localDiv);
+  });
+  //se muestra en consola
+  //console.log(filterLocalities(films.location))
+});
+//_-----------------FILTERDIRECTOR TERMINAR Y FACTORIZAR
+
+directorButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  hideWelcome();
+
+  //Vaciar contenedor
+  dataBaseContainer.innerHTML = "";
+  //Declara funcion con parametro
+  //const arrayDir = directors.split();
+  console.log(directors);
+
+  const tituloDirector = document.getElementById('director-list');
+  tituloDirector.innerHTML = "Director";
+  directors.forEach(() => {
+    //Crea el div
+
+    dataBaseContainer.innerHTML = `
+    <li class="director-name" id="${directors}<br>">${directors}</li>
+  `;
+    //Se envía al div
+    dataBaseContainer.appendChild(tituloDirector);
+
+  });
+}
+);
+
+
+//-----------------USAR FOREACH PARA IMPLEMENTAR DATA DE LAS PELÍCULAS EN EL CONTENEDOR DE DATABASE
+
+
+//botón de personajes
+/*charButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  const characters = filterCharacter(films);
+  console.log(characters);
+
+});*/
+
+//-----------------------------------------INICIALIZACIÓN DE BOTONES 
 moviesButton.addEventListener('click', () => {
   moviesDisplay();
 });
+
+charButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  //cambia de sección para mostrar la sección que anida el database-container
+  hideWelcome();
+
+  //Declara funcion con parametro
+  //const characters = filterCharacter(films);
+  characterDisplay();
+
+});
+//LOCALIDADES
+//DIRECTORES
+
+searchInput.addEventListener('input', (event) => {
+  // 1. declare and assign the value of the event's target to a variable AKA whatever is typed in the search bar
+  let inputValue = event.target.inputValue
+
+  // 2. check: if input exists and if input is larger than 0
+  if (inputValue && inputValue.trim().length > 0) {
+    // 3. redefine 'value' to exclude white space and change input to all lowercase
+    inputValue = inputValue.trim().toLowerCase()
+    // 4. return the results only if the value of the search is included in the person's name
+    // we need to write code (a function for filtering through our data to include the search input value)
+  } else {
+    // 5. return nothing
+    // Mostrar un mensaje para indicar que no se encuentra la información
+  }
+});
+//se llama a la función moviesDisplay una vez que se hace click en el botón de películas.
+
 
 welcomeButton.addEventListener('click', () => {
   hideSortArea();
