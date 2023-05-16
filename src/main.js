@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { ghibliData, filterCharacter, filterLocalities, filterDirector, searchByTitle } from './data.js'; // importa la función...
+import { ghibliData, filterCharacter, filterLocalities, filterDirector } from './data.js'; // importa la función...
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -16,9 +16,8 @@ const characters = filterCharacter(films);
 
 //console.log(films);
 
-console.log(searchByTitle(films, 'Castle in the Sky'));
-console.log(searchByTitle(films, 'castle in the sky'));
-
+/*console.log(searchByTitle(films, 'Castle in the Sky'));
+console.log(searchByTitle(films, 'castle in the sky'));*/
 
 //------------SECCIÓN CONSTANTES DE INTERACCIÓN CON DOM
 
@@ -61,8 +60,32 @@ const welcomeButton = document.getElementById('welcome-button');
 
 const searchInput = document.getElementById('search-input');
 
-//INTERMINADO
+//------------------FUNCIONES MOSTRADORAS 
 
+//FUNCIÓN PARA MOSTRAR PELÍCULAS
+function moviesDisplay() {
+  hideWelcome();
+
+  //Vaciamos el contenedor de contenido 
+
+  dataBaseContainer.innerHTML = '';
+
+  films.forEach(movie => {
+
+    //Se crea el div que contendrá el título de cada película y su respectiva portada
+    const movieDiv = document.createElement('div');
+
+    //Se usar innerHTML para crear la estructura hmtl
+    movieDiv.innerHTML +=
+      `<h4 class="movie-title" id="${movie.title}">${movie.title}<h4>
+    <img class="movie-poster" src="${movie.poster}" id = "${movie.id}">`
+
+    //se usa la función appendChild sobre el dataBaseContainer para introducir en éste el div recién creado
+    dataBaseContainer.appendChild(movieDiv);
+
+  });
+
+}
 //Función para mostrar personajes
 function characterDisplay() {
 
@@ -87,22 +110,10 @@ function characterDisplay() {
   });
 
 }
-
-
-//Se inicializa con el click
-charButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  //cambia de sección para mostrar la sección que anida el database-container
-  hideWelcome();
-
-  //Declara funcion con parametro
-  //const characters = filterCharacter(films);
-  characterDisplay();
-
-});
-
+//---FACTORIZACIÓN PENDIENTE
 localityButton.addEventListener('click', (event) => {
   event.preventDefault(event);
+  hideWelcome();
 
   //Vaciar contenedor
   dataBaseContainer.innerHTML = "";
@@ -122,70 +133,64 @@ localityButton.addEventListener('click', (event) => {
     dataBaseContainer.appendChild(localDiv);
   });
   //se muestra en consola
-  console.log(filterLocalities(films.location))
+  //console.log(filterLocalities(films.location))
 });
-//_-----------------FILTERDIRECTOR
+//_-----------------FILTERDIRECTOR TERMINAR Y FACTORIZAR
 
 directorButton.addEventListener('click', (event) => {
   event.preventDefault();
-  filterDirector();
+  hideWelcome();
+
   //Vaciar contenedor
   dataBaseContainer.innerHTML = "";
   //Declara funcion con parametro
-  //const directors = filterDirector(films);
-  //Recorre los directores
-  directors.filter((directores) => {
-    // Crear un div para cada director
-    const dirDiv = document.createElement('div');
+  //const arrayDir = directors.split();
+  console.log(directors);
 
-    // Inyectar el HTML para mostrar el nombre y la imagen del director
-    dirDiv.innerHTML = `
-      <h4 class="director-name" id="${directores.name}">${directores.name}</h4>
-    `;
+  const tituloDirector = document.getElementById('director-list');
+  tituloDirector.innerHTML = "Director";
+  directors.forEach(() => {
+    //Crea el div
 
-    // Agregar el div del director al dataBaseContainer
-    dataBaseContainer.appendChild(dirDiv);
+    dataBaseContainer.innerHTML = `
+    <li class="director-name" id="${directors}<br>">${directors}</li>
+  `;
+    //Se envía al div
+    dataBaseContainer.appendChild(tituloDirector);
+
   });
-});
+}
+);
 
 
 //-----------------USAR FOREACH PARA IMPLEMENTAR DATA DE LAS PELÍCULAS EN EL CONTENEDOR DE DATABASE
 
 
-// //botón de personajes
-// charButton.addEventListener('click', (event) => {
-//   event.preventDefault();
-//   const characters = filterCharacter(films);
-//   console.log(characters);
+//botón de personajes
+/*charButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  const characters = filterCharacter(films);
+  console.log(characters);
 
-// });
+});*/
 
-//-----------------FUNCIÓN PARA MOSTRAR DATA DE LAS PELÍCULAS EN EL CONTENEDOR DE DATABASE
+//-----------------------------------------INICIALIZACIÓN DE BOTONES 
+moviesButton.addEventListener('click', () => {
+  moviesDisplay();
+});
 
-
-function moviesDisplay() {
+charButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  //cambia de sección para mostrar la sección que anida el database-container
   hideWelcome();
 
-  //Vaciamos el contenedor de contenido 
+  //Declara funcion con parametro
+  //const characters = filterCharacter(films);
+  characterDisplay();
 
-  dataBaseContainer.innerHTML = '';
-
-  films.forEach(movie => {
-
-    //Se crea el div que contendrá el título de cada película y su respectiva portada
-    const movieDiv = document.createElement('div');
-
-    //Se usar innerHTML para crear la estructura hmtl
-    movieDiv.innerHTML +=
-      `<h4 class="movie-title" id="${movie.title}">${movie.title}<h4>
-    <img class="movie-poster" src="${movie.poster}" id = "${movie.id}">`
-
-    //se usa la función appendChild sobre el dataBaseContainer para introducir en éste el div recién creado
-    dataBaseContainer.appendChild(movieDiv);
-
-  });
-
-}
+});
+//LOCALIDADES
+//DIRECTORES
 
 searchInput.addEventListener('input', (event) => {
   // 1. declare and assign the value of the event's target to a variable AKA whatever is typed in the search bar
@@ -202,18 +207,12 @@ searchInput.addEventListener('input', (event) => {
     // Mostrar un mensaje para indicar que no se encuentra la información
   }
 });
-
-
-
 //se llama a la función moviesDisplay una vez que se hace click en el botón de películas.
-moviesButton.addEventListener('click', () => {
-  moviesDisplay();
-});
+
 
 welcomeButton.addEventListener('click', () => {
   hideSortArea();
 });
 
 
-//Crear funciones separadas para el display de personajes, localidades y directores (el de películas ya está hecho en moviesDisplay)
-//Llamar esa funcionalidad desde los eventlistener de los clicks y el input
+

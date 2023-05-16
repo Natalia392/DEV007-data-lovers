@@ -34,11 +34,23 @@ export const filterLocalities = (films) => {
 };
 
 export const filterDirector = (films) => {
-  for (const film of films) {
-    const directorNames = directorNames.filter(directors => directors.indexOf(film.director) === -1);
+  const directors = [];
 
+  for (const film of films) {
+    const director = film.director;
+    if (directors.indexOf(director) === -1) {
+      directors.push(director);
+    }
   }
+
+  return directors;
 };
+
+/*export const filterDirector = (films) => {
+ const directorNames = 
+ films.filter((directors) => directors.indexOf(films[director]) === -1) 
+ console.log(directorNames);
+};*/
 
 /*export const anotherExample = () => {
   return 'OMG';
