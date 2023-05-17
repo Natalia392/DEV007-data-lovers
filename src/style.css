@@ -22,6 +22,13 @@ body {
     font-style: normal;
 }
 
+header, #logo-totoro{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 3;
+
+}
 header {
     z-index: 3;
     background: #329EA1;
@@ -40,6 +47,7 @@ header {
     line-height: 48px;
     letter-spacing: 0.2em;
     color: #E9E3E3;
+    justify-content: center;
 }
 
 #totoro-background {
@@ -144,7 +152,11 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 
-
+#logo-totoro{
+    width: 3%;
+    display: flex;
+    justify-content: center;
+}
 #database-container {
     display: flex;
     align-content: space-evenly;
@@ -278,6 +290,10 @@ button {
     letter-spacing: 0.1em;
     background: #DB7776;
     color: #FFFFFF;
+}
+
+button :hover{
+    cursor: pointer;
 }
 
 #search-button {
