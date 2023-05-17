@@ -33,16 +33,21 @@ export const filterLocalities = (films) => {
   return localities;
 };
 
+//Para obtener array de nombres de directores no repetidos
 export const filterDirector = (films) => {
+  // Se declara array vacio
   const directors = [];
-
+//Se recorre el array films para ubicar cada film
   for (const film of films) {
+    //Accedemos al valor de director entrando a la constante film.director
     const director = film.director;
+    //Preguntamos si el director no está en el array preguntando por su índice. 
     if (directors.indexOf(director) === -1) {
+      //Si lo anterior se cumple entonces lo añade al array
       directors.push(director);
     }
   }
-
+//Devuelve el array con los nombres sin repetir
   return directors;
 };
 
