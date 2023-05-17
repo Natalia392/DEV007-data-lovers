@@ -37,7 +37,7 @@ export const filterLocalities = (films) => {
 export const filterDirector = (films) => {
   // Se declara array vacio
   const directors = [];
-//Se recorre el array films para ubicar cada film
+  //Se recorre el array films para ubicar cada film
   for (const film of films) {
     //Accedemos al valor de director entrando a la constante film.director
     const director = film.director;
@@ -47,7 +47,7 @@ export const filterDirector = (films) => {
       directors.push(director);
     }
   }
-//Devuelve el array con los nombres sin repetir
+  //Devuelve el array con los nombres sin repetir
   return directors;
 };
 
