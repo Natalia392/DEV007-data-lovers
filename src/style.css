@@ -1,5 +1,8 @@
 body {
+    background-image: url('https://www.todofondos.net/wp-content/uploads/1920x1200-Totoro-Wallpaper-768x480.jpg');
     display: flex;
+    background-size: cover;
     font-family: 'Kanit';
     font-style: normal;
 }
+
