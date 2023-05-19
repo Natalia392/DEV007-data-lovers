@@ -74,17 +74,22 @@ console.log(filterMovie, propertyValue);*/
   console.log(filtrarDirector)
 }*/
 
-
-
-export const filterMovie = (data, propertyValue) => {
-  const films = data.filter(movie => movie.title === propertyValue);
+//films[0].people[0].name
+//búsqueda de película por título
+export const searchByTitle = (data, propertyValue) => {
+  const films = data.filter(movie => movie.title.toLowerCase() === propertyValue.toLowerCase());
   return films;
 };
 
-//Devuelve la lista de personajes
-  
 
+//Mostrar personaje según búsqueda
+export const searchCharacterByName = (data, propertyValue) => {
+  const characterByName = data.filter(characterName => characterName.name.toLowerCase() === propertyValue.toLowerCase());
+  return characterByName;
+};
 
-//funcion para mostrar personaje según película
-
-//
+//Mostrar localidad al buscar por nombre en input
+export const searchLocationByName = (data, propertyValue) => {
+  const locationByName = data.filter(locationName => locationName.name.toLowerCase() === propertyValue.toLowerCase());
+  return locationByName; 
+}
