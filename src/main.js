@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { ghibliData, filterCharacter, filterLocalities, filterDirector } from './data.js'; // importa la función...
+import { filterCharacter, filterLocalities, filterDirector, searchCharacterByName } from './data.js'; // importa la función...
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -19,31 +19,13 @@ const characters = filterCharacter(films);
 /*console.log(searchByTitle(films, 'Castle in the Sky'));
 console.log(searchByTitle(films, 'castle in the sky'));*/
 
-//------------SECCIÓN CONSTANTES DE INTERACCIÓN CON DOM
+//----------SECCIÓN CONSTANTES DE INTERACCIÓN CON DOM
+
+//------------------------------ELEMENTOS HTML DEL DOM
 
 const dataBaseContainer = document.getElementById('database-container'); //Declaración de la variable que contendra los elementos a insertar en el hmtl
 
-
-
-//------------OCULTAR Y MOSTRAR SECCIONES 
-const welcomeSection = document.getElementById("welcome-page"); //Declaramos constante que guarda la sección welcome TENEMOS QUE MOVERLA AL BOTON QUE CORRESPONDA
-
-
-const sortAreaSection = document.getElementById('sortArea');
-
-
-function hideWelcome() {
-  sortAreaSection.style.display = 'block';
-  welcomeSection.style.display = 'none';
-}
-
-function hideSortArea() {
-  welcomeSection.style.display = 'block';
-  sortAreaSection.style.display = 'none';
-}
-hideSortArea();
-
-//---------BOTONES
+//------------------------------BOTONES
 // eslint-disable-next-line no-unused-vars
 const searchButton = document.getElementById('search-button'); //Constante del botón de búsqueda
 
@@ -60,9 +42,36 @@ const welcomeButton = document.getElementById('welcome-button');
 
 const searchInput = document.getElementById('search-input');
 
-//------------------FUNCIONES MOSTRADORAS 
+//------------OCULTAR Y MOSTRAR SECCIONES 
+const welcomeSection = document.getElementById("welcome-page"); //Declaramos constante que guarda la sección welcome TENEMOS QUE MOVERLA AL BOTON QUE CORRESPONDA
 
-//FUNCIÓN PARA MOSTRAR PELÍCULAS
+
+const sortAreaSection = document.getElementById('sortArea');
+
+
+//----------------------SECCIÓN FUNCIONES
+
+//---- OCULTAR Y MOSTRAR
+
+function hideWelcome() {
+  sortAreaSection.style.display = 'block';
+  welcomeSection.style.display = 'none';
+}
+
+function hideSortArea() {
+  welcomeSection.style.display = 'block';
+  sortAreaSection.style.display = 'none';
+}
+
+//Llamamos enseguida a función ocultar sort area, para que sólo muestre el welcome
+hideSortArea();
+
+
+//---- FUNCIONES MOSTRADORAS 
+
+
+//Función para mostrar películas
+
 function moviesDisplay() {
   hideWelcome();
 
@@ -86,6 +95,8 @@ function moviesDisplay() {
   });
 
 }
+
+
 //Función para mostrar personajes
 function characterDisplay() {
 
@@ -110,11 +121,11 @@ function characterDisplay() {
   });
 
 }
-//---FACTORIZACIÓN PENDIENTE
-localityButton.addEventListener('click', (event) => {
-  event.preventDefault(event);
-  hideWelcome();
 
+
+//Función para mostrar localidades
+function localitiesDisplay() {
+  hideWelcome();
   //Vaciar contenedor
   dataBaseContainer.innerHTML = "";
   //Declara funcion con parametro
@@ -126,15 +137,17 @@ localityButton.addEventListener('click', (event) => {
     const localDiv = document.createElement('div');
     //Inyecta html name + img
     localDiv.innerHTML = `
-          <h4 class="local-name" id="${location.name}">${location.name}</h4>
-          <img class="local-img" src="${location.img}" id=${location.name}>
-        `;
+            <h4 class="local-name" id="${location.name}">${location.name}</h4>
+            <img class="local-img" src="${location.img}" id=${location.name}>
+          `;
     //Se envía al div
     dataBaseContainer.appendChild(localDiv);
+    //se muestra en consola
+    //console.log(filterLocalities(films.location))
   });
-  //se muestra en consola
-  //console.log(filterLocalities(films.location))
-});
+}
+
+
 //_-----------------FILTERDIRECTOR TERMINAR Y FACTORIZAR
 
 directorButton.addEventListener('click', (event) => {
@@ -175,22 +188,32 @@ directorButton.addEventListener('click', (event) => {
 });*/
 
 //-----------------------------------------INICIALIZACIÓN DE BOTONES 
-moviesButton.addEventListener('click', () => {
+
+//Escucha botón inicio
+welcomeButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  hideSortArea();
+});
+
+//Escucha botón películas
+moviesButton.addEventListener('click', (event) => {
+  event.preventDefault();
   moviesDisplay();
 });
 
+//Escucha botón personajes
 charButton.addEventListener('click', (event) => {
   event.preventDefault();
-  //cambia de sección para mostrar la sección que anida el database-container
-  hideWelcome();
-
-  //Declara funcion con parametro
-  //const characters = filterCharacter(films);
   characterDisplay();
-
 });
-//LOCALIDADES
-//DIRECTORES
+
+//Escucha el botón de localidades
+localityButton.addEventListener('click', (event) => {
+  event.preventDefault(event);
+  localitiesDisplay();
+});
+
+//DIRECTORES (botón)
 
 searchInput.addEventListener('input', (event) => {
   // 1. declare and assign the value of the event's target to a variable AKA whatever is typed in the search bar
@@ -208,11 +231,3 @@ searchInput.addEventListener('input', (event) => {
   }
 });
 //se llama a la función moviesDisplay una vez que se hace click en el botón de películas.
-
-
-welcomeButton.addEventListener('click', () => {
-  hideSortArea();
-});
-
-
-
