@@ -25,7 +25,7 @@ console.log(searchByTitle(films, 'castle in the sky'));*/
 //------------------------------ELEMENTOS HTML DEL DOM
 
 const dataBaseContainer = document.getElementById('database-container'); //Declaración de la variable que contendra los elementos a insertar en el hmtl
-
+const directorBox = document.getElementById('director-box'); //Declaracion caja directores para lista
 //------------------------------BOTONES
 // eslint-disable-next-line no-unused-vars
 const searchButton = document.getElementById('search-button'); //Constante del botón de búsqueda
@@ -156,21 +156,23 @@ directorButton.addEventListener('click', (event) => {
   hideWelcome();
 
   //Vaciar contenedor
-  dataBaseContainer.innerHTML = "";
+  directorBox.innerHTML = "";
   //Declara funcion con parametro
   //const arrayDir = directors.split();
   console.log(directors);
-  const arrayDirectors = directors.split(',')
+  //const arrayDirectors = directors.split(',')
   const tituloDirector = document.getElementById('director-list');
   tituloDirector.innerHTML = "Director";
-  arrayDirectors.forEach(element => {
+  directors.forEach((director) => {
     //Crea el div
+    directorBox.innerHTML += `
+    <li class="director-name" id="${director}<br>">${director}</li>`
 
-    dataBaseContainer.innerHTML += `
+  /*  dataBaseContainer.innerHTML += `
     <li class="director-name" id="${element.director}<br>">${element.director}</li>
   `;
-    //Se envía al div
-    dataBaseContainer.appendChild(tituloDirector);
+    //Se envía al div*/
+    //directorBox.appendChild(tituloDirector);
   });
 });
 
