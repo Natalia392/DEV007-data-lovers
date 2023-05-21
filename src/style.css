@@ -4,9 +4,12 @@ nav {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-top: 60px;
 }
 
-
+.nav-buttons, .search-by-word{
+    position: relative;
+}
 body {
     background-image: linear-gradient(to bottom left, #34b4dc, #cbd39a);
     background-attachment: no-repeat;
@@ -26,11 +29,11 @@ main {
     background-attachment: no-repeat;
     background-size: cover;
 }
-
+/*
 header {
     display: flex;
     justify-content: center;
-    /*z-index: 3;*/
+    z-index: 3;
     background: #236E70;
     margin: 0%;
     font-family: 'Londrina Solid';
@@ -41,34 +44,34 @@ line-height: 38px;
 text-align: center;
 letter-spacing: 0.2em;
 color:#E9E3E3;
-}
+}*/
 
 header{
+    background: #236E70;
+
     display: flex;
 justify-content: space-evenly;
 align-items: center;
 height: 50px;
-
-}
-h2{
-    width: 426px;
-    height: 47px;
-    padding: 0%;
-    font-size: 30px;
-}
-
-#logo-totoro{
-    width: 50px;
-    height: 50px;
+box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+border:rgba(0, 0, 0, 1);
+position: fixed;
+width: 100%;
+margin-bottom: 50px;
+z-index: 2;
 }
 
 .logo-ghiblipedia{
     display: flex;
     flex-direction: row;
+    height: 50px;
+    opacity: 90;
 }
 
 #banner {
     max-width: 900px;
+    min-width: 200px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
 }
 
 #totorin {
@@ -111,7 +114,11 @@ h2{
     color: #4F4E48;
 }
 
-
+.character-name,
+.movie-title,
+.local-name:hover{
+    font-weight: 600px;
+}
 
 .movie-poster,
 .local-img,
@@ -123,8 +130,14 @@ h2{
     border-radius: 12px;
     cursor: pointer;
     object-fit: cover;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+opacity: 80%;
 }
-
+.movie-poster:hover,
+.local-img:hover,
+.character-img:hover{
+opacity: 120%;
+}
 #database-container {
     display: flex;
     align-content: space-evenly;
@@ -137,7 +150,7 @@ h2{
     border-width: 0px 2px 2px 0px;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 2.82857px 2.82857px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
     border-radius: 15px;
     margin-top: 0%;
     justify-content: space-evenly;
@@ -166,6 +179,8 @@ h2{
     border-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0px 2.82857px 2.82857px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+
 
 }
 
@@ -213,7 +228,7 @@ h2{
     border-width: 0px 1.71654px 1.71654px 0px;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.6);
-    box-shadow: outset 2px 2px 2px 0px rgba(255, 255, 255, 1.9), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
     border-radius: 8.58268px;
     font-family: 'Londrina Solid';
     font-style: normal;
@@ -242,7 +257,7 @@ h2{
     border-width: 0px 1.41429px 2.12143px 0px;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 2.82857px 2.82857px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
     border-radius: 7.07143px;
     font-family: 'Londrina Solid';
     font-style: normal;
@@ -261,7 +276,7 @@ h2{
     border-width: 0px 1.41429px 1.41429px 0px;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 2.82857px 2.82857px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
     border-radius: 7.07143px;
     font-family: 'Londrina Solid';
     font-style: normal;
