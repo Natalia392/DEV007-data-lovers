@@ -53,7 +53,6 @@ const sortAreaSection = document.getElementById('sortArea');
 //----------------------SECCIÓN FUNCIONES
 
 //---- OCULTAR Y MOSTRAR
-
 function hideWelcome() {
   sortAreaSection.style.display = 'block';
   welcomeSection.style.display = 'none';
@@ -63,7 +62,15 @@ function hideSortArea() {
   welcomeSection.style.display = 'block';
   sortAreaSection.style.display = 'none';
 }
-
+function hideDirector(){
+  directorBox.style.display = 'none'
+  dataBaseContainer.display = 'block'
+}
+function showDirector(){
+  dataBaseContainer.style.display = 'none'
+  directorBox.display = 'block'
+}
+//showDirector();
 //Llamamos enseguida a función ocultar sort area, para que sólo muestre el welcome
 hideSortArea();
 
@@ -75,7 +82,7 @@ hideSortArea();
 
 function moviesDisplay() {
   hideWelcome();
-
+  hideDirector();
   //Vaciamos el contenedor de contenido 
 
   dataBaseContainer.innerHTML = '';
@@ -102,7 +109,7 @@ function moviesDisplay() {
 function characterDisplay() {
 
   hideWelcome();
-
+  hideDirector();
   //Vaciar contenedor
   dataBaseContainer.innerHTML = "";
 
@@ -127,6 +134,7 @@ function characterDisplay() {
 //Función para mostrar localidades
 function localitiesDisplay() {
   hideWelcome();
+  hideDirector();
   //Vaciar contenedor
   dataBaseContainer.innerHTML = "";
   //Declara funcion con parametro
@@ -135,7 +143,7 @@ function localitiesDisplay() {
   console.log(localities);
   localities.forEach((location) => {
     //Crea el div
-    const localDiv = document.createElement('div');
+    const localDiv = document.createElement('div');//establecer su lugar desde html para darle una clase de card
     //Inyecta html name + img
     localDiv.innerHTML = `
             <h4 class="local-name" id="${location.name}">${location.name}</h4>
@@ -154,7 +162,7 @@ function localitiesDisplay() {
 directorButton.addEventListener('click', (event) => {
   event.preventDefault();
   hideWelcome();
-
+  showDirector()
   //Vaciar contenedor
   directorBox.innerHTML = "";
   //Declara funcion con parametro
@@ -172,7 +180,8 @@ directorButton.addEventListener('click', (event) => {
     <li class="director-name" id="${element.director}<br>">${element.director}</li>
   `;
     //Se envía al div*/
-    //directorBox.appendChild(tituloDirector);
+    //dataBaseContainer.appendChild(tituloDirector);
+
   });
 });
 
