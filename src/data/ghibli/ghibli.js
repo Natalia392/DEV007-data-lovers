@@ -226,7 +226,7 @@ export default {
         {
           "id": "d5df3c04-f355-4038-833c-83bd3502b6b9",
           "name": "Mei Kusakabe",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/b/b5/God_Jul_Mei_%C3%B6nskar_fr%C3%A5n_Tomten.jpg",
+          "img": "https://i.pinimg.com/736x/53/17/7d/53177dd12c09b9ce9f2afffebe760b14--cartoon.jpg",
           "gender": "Female",
           "age": "4",
           "eye_color": "Brown",
@@ -710,7 +710,7 @@ export default {
         {
           "id": "4a2e2cee-08ca-4d44-9564-2b3e5421bafb",
           "name": "Fio Piccolo",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/1/16/Fio_%282%29.jpg",
+          "img": "https://s4.anilist.co/file/anilistcdn/character/large/8044.jpg",
           "gender": "Female",
           "age": "17",
           "eye_color": "Brown",
@@ -762,8 +762,7 @@ export default {
         {
           "id": "34df8f25-8f80-4823-8f01-bf9852039987",
           "name": "Piccolo S.P.A.",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/4/4f/Piccolos_garage.jpg",
-          "climate": "Continental",
+          "img": "https://64.media.tumblr.com/7d28d6a7458a9552869fec810d619474/tumblr_p1l4evCnBK1qa9gmgo5_640.jpg",
           "terrain": "River",
           "surface_water": "40",
           "residents": [
@@ -977,7 +976,7 @@ export default {
         {
           "id": "42f787d8-1fcb-4d3d-82f2-a74409869368",
           "name": "Seiji's House",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/a/a7/Mimi011.jpg",
+          "img": "https://i.pinimg.com/originals/8a/87/29/8a8729f643b796a75fd991a78def3b57.jpg",
           "climate": "Continental",
           "terrain": "City",
           "surface_water": "0",
@@ -2296,7 +2295,7 @@ export default {
         {
           "id": "682df5c3-b09e-46af-94d1-ae0d17f9b4b6",
           "name": "Bamboo Forest",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/e/ec/Ghibli-kaguya-bamboo-forest.jpg",
+          "img": "https://i.pinimg.com/originals/34/cc/d3/34ccd3eee59d453d2465442dadfa9bb2.jpg",
           "climate": "Tropical",
           "terrain": "Forest",
           "surface_water": "10",
