@@ -175,7 +175,7 @@ directorButton.addEventListener('click', (event) => {
     directorBox.innerHTML += `
     <li class="director-name" id="${director}<br>">${director}</li>`
 
-  /*  dataBaseContainer.innerHTML += `
+    /*  dataBaseContainer.innerHTML += `
     <li class="director-name" id="${element.director}<br>">${element.director}</li>
   `;
     //Se envía al div*/
