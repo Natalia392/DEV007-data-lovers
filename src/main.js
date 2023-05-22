@@ -40,6 +40,7 @@ const directorButton = document.getElementById('director-button'); //Constante d
 const moviesButton = document.getElementById('movies-button');
 const welcomeButton = document.getElementById('welcome-button');
 const searchInput = document.getElementById('search-input');
+const musicButton = document.getElementById('sincara-button');
 
 
 //------------OCULTAR Y MOSTRAR SECCIONES 
@@ -68,6 +69,8 @@ function showDirector(){
   dataBaseContainer.style.display = 'none'
   directorBox.display = 'block'
 }
+
+
 //showDirector();
 //Llamamos enseguida a función ocultar sort area, para que sólo muestre el welcome
 hideSortArea();
@@ -97,12 +100,36 @@ function moviesDisplay() {
 
     //se usa la función appendChild sobre el dataBaseContainer para introducir en éste el div recién creado
     dataBaseContainer.appendChild(movieDiv);
+    const movieCard = document.getElementById(movie.id);
+    console.log(movieCard);
+    movieCard.addEventListener('click', ()=>{
+      const cardInfo = document.createElement('div');
+      dataBaseContainer.innerHTML = '';
+      cardInfo.innerHTML = `
+      <img src="${movie.poster}" alt="${movie.title}">
+      <h3>${movie.title}</h3>
+      <p>Director: ${movie.director}</p>
+      <p>Producer: ${movie.producer}</p>
+      <p>Release_date: ${movie.release_date}</p>
+      <p>rt_score: ${movie.rt_score}</p>
+      <p>Description: ${movie.description}</p>
+    `
+      dataBaseContainer.appendChild(cardInfo);
 
+    })
   });
-
 }
 
-
+/*"id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
+"title": "Castle in the Sky",
+"description": "The orphan Sheeta inherited a mysterious crystal that links her to the mythical sky-kingdom of Laputa. With the help of resourceful Pazu and a rollicking band of sky pirates, she makes her way to the ruins of the once-great civilization. Sheeta and Pazu must outwit the evil Muska, who plans to use Laputa's science to make himself ruler of the world.",
+"director": "Hayao Miyazaki",
+"producer": "Isao Takahata",
+"poster": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Castle_in_the_Sky.jpg",
+"release_date": "1986",
+"rt_score": "95",
+"people"
+*/
 //Función para mostrar personajes
 function characterDisplay() {
 
@@ -118,14 +145,32 @@ function characterDisplay() {
 
     // Inyectar el HTML para mostrar el nombre y la imagen del personaje
     charDiv.innerHTML = `
-      <h4 class="character-name" id="${character.name}">${character.name}</h4>
-      <img class="character-img" src="${character.img}" alt="${character.img}">
+      <h4 class="character-name">${character.name}</h4>
+      <input type="image" id="${character.name}"class="character-img" src="${character.img}" alt="${character.img}">
     `;
 
     // Agregar el div del personaje al databaseContainer
     dataBaseContainer.appendChild(charDiv);
+    const characterCard = document.getElementById(character.name);
+    console.log(characterCard);
+    characterCard.addEventListener('click', ()=>{
+      const cardInfo = document.createElement('div');
+      dataBaseContainer.innerHTML = '';
+      cardInfo.innerHTML = `
+      <img src="${character.img}" alt="${character.name}">
+      <h3>${character.name}</h3>
+      <p>Género: ${character.gender}</p>
+      <p>Edad: ${character.age}</p>
+      <p>Color de ojos: ${character.eye_color}</p>
+      <p>Color de cabello: ${character.hair_color}</p>
+      <p>Especie: ${character.specie}</p>
+    `
+      dataBaseContainer.appendChild(cardInfo);
+
+    })
   });
 }
+
 
 
 //Función para mostrar localidades
@@ -143,16 +188,30 @@ function localitiesDisplay() {
     const localDiv = document.createElement('div');//establecer su lugar desde html para darle una clase de card
     //Inyecta html name + img
     localDiv.innerHTML = `
-            <h4 class="local-name" id="${location.name}">${location.name}</h4>
-            <img class="local-img" src="${location.img}" id=${location.name}>
+            <h4 class="local-name">${location.name}</h4>
+            <input type="image" id="${location.name}"class="local-img" src="${location.img}" id=${location.name}>
           `;
     //Se envía al div
     dataBaseContainer.appendChild(localDiv);
+    const locationCard = document.getElementById(location.name);
+    console.log(locationCard);
+    locationCard.addEventListener('click', ()=>{
+      const cardInfo = document.createElement('div');
+      dataBaseContainer.innerHTML = '';
+      cardInfo.innerHTML = `
+      <img src="${location.img}" alt="${location.name}">
+      <h3>${location.name}</h3>
+      <p>Climate: ${location.climate}</p>
+      <p>Terrain: ${location.terrain}</p>
+      <p>Surface water: ${location.surface_water}</p>
+    `
+      dataBaseContainer.appendChild(cardInfo);
+
+    })
     //se muestra en consola
     //console.log(filterLocalities(films.location))
   });
 }
-
 
 //_-----------------FILTERDIRECTOR TERMINAR Y FACTORIZAR
 
@@ -238,3 +297,41 @@ searchInput.addEventListener('input', (event) => {
   }
 });
 //se llama a la función moviesDisplay una vez que se hace click en el botón de películas.
+
+
+function mostrarInformacionPersonaje(personajeId) {
+  // Encuentra el personaje correspondiente al ID
+  const personaje = characters.find(personaje => personaje.id === personajeId);
+  
+  if (!personaje) {
+    console.error('Personaje no encontrado');
+    return;
+  }
+  
+  // Crea un elemento <div> para el template de información
+  const template = document.createElement('div');
+  
+  // Agrega la clase CSS al elemento <div>
+  template.classList.add('informacion-personaje');
+  
+  // Crea el contenido del template con los datos del personaje
+  template.innerHTML = `
+    <img src="${personaje.img}" alt="${personaje.name}">
+    <h3>${personaje.name}</h3>
+    <p>Género: ${personaje.gender}</p>
+    <p>Edad: ${personaje.age}</p>
+    <p>Color de ojos: ${personaje.eye_color}</p>
+    <p>Color de cabello: ${personaje.hair_color}</p>
+    <p>Especie: ${personaje.specie}</p>
+  `;
+  
+  // Agrega el template al documento
+  document.body.appendChild(template);
+}
+
+
+
+
+
+
+
