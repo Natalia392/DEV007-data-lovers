@@ -69,7 +69,14 @@ z-index: 2;
     height: 50px;
     opacity: 90;
 }
+#sincara-button{
+    position:fixed;
+    width: 150px;
+    top: 10%;
+    right: 10%;
+    z-index: 3;
 
+}
 #banner {
     max-width: 900px;
     min-width: 200px;
@@ -318,7 +325,7 @@ zoom: inset 120%;
 
 }
 
-#order-button {
+#order-select {
     width: 100px;
     height: 40px;
     background: #2499b0 ;
@@ -337,7 +344,7 @@ zoom: inset 120%;
     color: #FFF5F5;
     cursor: pointer;
 }
-#order-button:hover {
+#order-select:hover {
     cursor: pointer;
     background-color: #4F4E48;
     color: #2499b0;
