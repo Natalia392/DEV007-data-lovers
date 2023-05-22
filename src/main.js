@@ -25,7 +25,7 @@ console.log(searchByTitle(films, 'castle in the sky'));*/
 //------------------------------ELEMENTOS HTML DEL DOM
 
 const dataBaseContainer = document.getElementById('database-container'); //Declaración de la variable que contendra los elementos a insertar en el hmtl
-
+const directorBox = document.getElementById('director-box'); //Declaracion caja directores para lista
 //------------------------------BOTONES
 // eslint-disable-next-line no-unused-vars
 const searchButton = document.getElementById('search-button'); //Constante del botón de búsqueda
@@ -53,7 +53,6 @@ const sortAreaSection = document.getElementById('sortArea');
 //----------------------SECCIÓN FUNCIONES
 
 //---- OCULTAR Y MOSTRAR
-
 function hideWelcome() {
   sortAreaSection.style.display = 'block';
   welcomeSection.style.display = 'none';
@@ -63,7 +62,15 @@ function hideSortArea() {
   welcomeSection.style.display = 'block';
   sortAreaSection.style.display = 'none';
 }
-
+function hideDirector(){
+  directorBox.style.display = 'none'
+  dataBaseContainer.display = 'block'
+}
+function showDirector(){
+  dataBaseContainer.style.display = 'none'
+  directorBox.display = 'block'
+}
+//showDirector();
 //Llamamos enseguida a función ocultar sort area, para que sólo muestre el welcome
 hideSortArea();
 
@@ -75,7 +82,7 @@ hideSortArea();
 
 function moviesDisplay() {
   hideWelcome();
-
+  hideDirector();
   //Vaciamos el contenedor de contenido 
 
   dataBaseContainer.innerHTML = '';
@@ -102,7 +109,7 @@ function moviesDisplay() {
 function characterDisplay() {
 
   hideWelcome();
-
+  hideDirector();
   //Vaciar contenedor
   dataBaseContainer.innerHTML = "";
 
@@ -120,13 +127,13 @@ function characterDisplay() {
     // Agregar el div del personaje al databaseContainer
     dataBaseContainer.appendChild(charDiv);
   });
-
 }
 
 
 //Función para mostrar localidades
 function localitiesDisplay() {
   hideWelcome();
+  hideDirector();
   //Vaciar contenedor
   dataBaseContainer.innerHTML = "";
   //Declara funcion con parametro
@@ -135,7 +142,7 @@ function localitiesDisplay() {
   console.log(localities);
   localities.forEach((location) => {
     //Crea el div
-    const localDiv = document.createElement('div');
+    const localDiv = document.createElement('div');//establecer su lugar desde html para darle una clase de card
     //Inyecta html name + img
     localDiv.innerHTML = `
             <h4 class="local-name" id="${location.name}">${location.name}</h4>
@@ -154,23 +161,26 @@ function localitiesDisplay() {
 directorButton.addEventListener('click', (event) => {
   event.preventDefault();
   hideWelcome();
-
+  showDirector()
   //Vaciar contenedor
-  dataBaseContainer.innerHTML = "";
+  directorBox.innerHTML = "";
   //Declara funcion con parametro
   //const arrayDir = directors.split();
   console.log(directors);
-  const arrayDirectors = directors.split(',')
+  //const arrayDirectors = directors.split(',')
   const tituloDirector = document.getElementById('director-list');
   tituloDirector.innerHTML = "Director";
-  arrayDirectors.forEach(element => {
+  directors.forEach((director) => {
     //Crea el div
+    directorBox.innerHTML += `
+    <li class="director-name" id="${director}<br>">${director}</li>`
 
-    dataBaseContainer.innerHTML += `
+  /*  dataBaseContainer.innerHTML += `
     <li class="director-name" id="${element.director}<br>">${element.director}</li>
   `;
-    //Se envía al div
-    dataBaseContainer.appendChild(tituloDirector);
+    //Se envía al div*/
+    //dataBaseContainer.appendChild(tituloDirector);
+
   });
 });
 

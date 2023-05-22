@@ -1,21 +1,345 @@
+/*ESTILOS GHIBLIPEDIA*/
+nav {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.nav-buttons, .search-by-word{
+    position: relative;
+    margin-bottom: 10px;
+}
+
 body {
     background-image: linear-gradient(to bottom left, #34b4dc, #cbd39a);
+    background-attachment: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
     display: flex;
     font-family: 'Kanit';
     font-style: normal;
     height: 90%;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    background-attachment: no-repeat;
+    background-size: cover;
+}
+/*
+header {
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+    background: #236E70;
+    margin: 0%;
+    font-family: 'Londrina Solid';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 38px;
+text-align: center;
+letter-spacing: 0.2em;
+color:#E9E3E3;
+}*/
+
+header{
+    background: #236E70;
+
+    display: flex;
+justify-content: space-evenly;
+align-items: center;
+height: 50px;
+box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+border:rgba(0, 0, 0, 1);
+position: fixed;
+width: 100%;
+margin-bottom: 50px;
+z-index: 2;
+}
+
+.logo-ghiblipedia{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    opacity: 90;
+}
+
+#banner {
+    max-width: 900px;
+    min-width: 200px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    opacity: 95%;
 }
 
 #totorin {
     position: fixed;
     bottom: 0;
-    left: 0;
+    left: -10%;
     width: 50%;
     max-width: 600%;
     min-width: 50%;
     z-index: -1;
     margin-right: -10%;
+filter: contrast(120%);
+filter: saturate(120%);}
+
+#totorin:hover{
+    display: none;
+}
+
+#director-box {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    flex-wrap: wrap;
+    width: 800px;
+    background: rgba(228, 194, 165, 0.532);
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    margin-top: 5%;
+    padding: 5%;
+}
+
+
+.character-name,
+.movie-title,
+.local-name {
+    font-family: 'Londrina Solid';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.0943px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #4F4E48;
+}
+
+.character-name,
+.movie-title,
+.local-name:hover{
+    font-weight: 600px;
+}
+
+.movie-poster,
+.local-img,
+.character-img {
+    width: 150px;
+    height: 190px;
+    display: flex;
+    margin: 45px;
+    border-radius: 12px;
+    cursor: pointer;
+    object-fit: cover;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+opacity: 80%;
+}
+
+.movie-poster:hover,
+.local-img:hover,
+.character-img:hover{
+opacity: 120%;
+box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 3), 7px 7px 20px 0px rgba(0.5, 0.5, 0, 0.7), 4px 4px 5px 0px rgba(0.3, 0.3, 0.3, 0.6);
+zoom: inset 120%;
+
+}
+
+#database-container {
+    display: flex;
+    align-content: space-evenly;
+    width: 800px;
+    max-width: 800px;
+    min-width: 200px;
+    flex-wrap: wrap;
+    width: 800px;
+    background: rgba(228, 194, 165, 0.732);
+    border-width: 0px 2px 2px 0px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    border-radius: 15px;
+    margin-top: 0%;
+    justify-content: space-evenly;
+}
+
+.welcome-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+    align-content: center;
+    width: 800px;
+    max-width: 800px;
+    min-width: 200px;
+    flex-wrap: wrap;
+    width: 800px;
+    background: rgba(228, 194, 165, 0.732);
+    border-width: 0px 2px 2px 0px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2.82857px 2.82857px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+
+
+}
+
+.welcome-title {
+    display: flex;
+    justify-content: center;
+    font-family: 'Londrina Solid';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 144.5%;
+    /* or 46px */
+
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-shadow: #4F4E48;
+    color: #FFF5F5;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+.welcome-p {
+    display: flex;
+    align-items: end;
+    font-family: 'Londrina Solid';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 25px;
+    /* or 114% */
+
+    text-align: right;
+    letter-spacing: 0.08em;
+
+    color: rgba(79, 78, 72, 0.9);
+
+    text-shadow: 0px 1.66154px 1.66154px rgba(0, 0, 0, 0.25);
+}
+
+.filter-buttons {
+    box-sizing: border-box;
+    width: 175.09px;
+    min-width: 80px;
+    height: 42.06px;
+    background: #e66b69e8;
+    border-width: 0px 1.71654px 1.71654px 0px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.6);
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .2), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    border-radius: 8.58268px;
+    font-family: 'Londrina Solid';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #FFF5F5;
+    cursor: pointer;
+    filter: saturate(110%);
+}
+
+.filter-buttons:hover {
+    cursor: pointer;
+    background-color: #4F4E48;
+    color: #DB7776;
+    filter: brightness(120%);
+}
+
+
+#search-input {
+    width: 401px;
+    min-width: 80px;
+    height: 40px;
+    min-height: 20px;
+    background: #E9E3E3;
+    border-width: 0px 1.41429px 2.12143px 0px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    border-radius: 7.07143px;
+    font-family: 'Londrina Solid';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.0943px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #4F4E48;
+}
+
+#search-input:hover{
+    filter: brightness(120%);
+}
+
+#search-input::after{
+    filter: brightness(120%);
+}
+
+#search-button {
+    width: 100px;
+    height: 40px;
+    background: #A7B07A;
+    border-width: 0px 1.41429px 1.41429px 0px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .2), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    border-radius: 7.07143px;
+    font-family: 'Londrina Solid';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #FFF5F5;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    cursor: pointer;
+    background-color: #4F4E48;
+    color: #A7B07A;
+
+}
+
+#order-button {
+    width: 100px;
+    height: 40px;
+    background: #2499b0 ;
+    border-width: 0px 1.41429px 1.41429px 0px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .2), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    border-radius: 7.07143px;
+    font-family: 'Londrina Solid';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #FFF5F5;
+    cursor: pointer;
+}
+#order-button:hover {
+    cursor: pointer;
+    background-color: #4F4E48;
+    color: #2499b0;
+
 }

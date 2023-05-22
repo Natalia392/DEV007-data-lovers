@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>STUDIO GHIBLI</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,56 +22,48 @@
 
   </div>-->
 
-  <header id="studio-ghibli">GHIBLIPEDIA
-<!--<img id="logo-totoro" alt="totorin" src="./img/logo-totoro.png">-->
-    <nav>
-      <div class="nav-buttons">
-        <button id='welcome-button'>INICIO</button>
-        <button id="movies-button">PELÍCULAS</button>
-        <button id="locality-button">LOCALIDADES</button>
-        <button id="character-button">PERSONAJES</button>
-        <button id="director-button">DIRECTORES</button>
-      </div>
-    </nav>
+  <header id="studio-ghibli">
+    <div class="logo-ghiblipedia">
+      <img id="logo-ghiblipedia" alt="logo-header" src="img/logo-ghiblipedia.png">
+    </div>
+    <!--<img id="logo-totoro" alt="totorin" src="./img/logo-totoro.png">-->
+
 
   </header>
-
+  <nav>
+    <div class="nav-buttons">
+      <button class="filter-buttons" id='welcome-button'>Inicio</button>
+      <button class="filter-buttons" id="movies-button">Películas</button>
+      <button class="filter-buttons" id="character-button">Personajes</button>
+      <button class="filter-buttons" id="locality-button">Localidades</button>
+      <button class="filter-buttons" id="director-button">Directores</button>
+    </div>
+    <div class="search-by-word">
+      <input type="text" id="search-input" placeholder="¿Qué buscas?" />
+      <button id="search-button">Buscar</button>
+      <button id="order-button">Ordenar⬇</button>
+    </div>
+  </nav>
   <main>
     <section class='welcome' id="welcome-page">
+      <div class="banner-in-container">
+        <img id="banner" alt="banner welcome" src="img/banner-ghiblipedia.png">
+      </div>
+      <h4 class="welcome-title">¡DESCUBRE LA GHIBLIPEDIA!</h4>
 
-    <div class="welcome-container">
-      <div class="wcontainer-pt1">
-        <h4 class="welcome-title">¡Bienvenid@!</h4>
-        <p class="welcome-p">Aquí podrás encontrar distinta información y datos sobre las películas del Studios Ghibli
+      <div class="welcome-container" class="containers">
+        <p class="welcome-p">Studio Ghibli es un estudio de animación japonesa con una fuerte presencia en la industria de la animación. Esta es una página pensada para aquellos fans del estudio que aprecian la belleza de la animación, paisajes, ambientación  de estas películas.
         </p>
       </div>
-      <div class="search-by-word">
-        <input type="text" id="search-input" placeholder="Buscar" />
-        <button id="search-button">Buscar</button>
-      </div>
-    </div>
-  </section>
-
-
-
-    <div id="root"></div>
     </section>
-  
-
-
-
-
 
     <section class="sort-area" id="sortArea">
       <h2 id="director-list"></h2>
-      <div id="database-container">
-       
-
+      <div class="containers" id="director-box"></div>
+      <div class="containers" id="database-container">
       </div>
     </section>
   </main>
-
-
 
   <footer>contacto
 
