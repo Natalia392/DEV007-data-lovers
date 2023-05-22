@@ -26,26 +26,24 @@ console.log(searchByTitle(films, 'castle in the sky'));*/
 
 const dataBaseContainer = document.getElementById('database-container'); //Declaración de la variable que contendra los elementos a insertar en el hmtl
 const directorBox = document.getElementById('director-box'); //Declaracion caja directores para lista
+// eslint-disable-next-line no-unused-vars
+const detailedInfo = document.getElementById('detailed-info'); //Para las tarjetas con info sobre películas, personajes y localidades
+
 //------------------------------BOTONES
+
 // eslint-disable-next-line no-unused-vars
 const searchButton = document.getElementById('search-button'); //Constante del botón de búsqueda
-
 const localityButton = document.getElementById('locality-button'); //constante del botón de localidades
-
 const charButton = document.getElementById('character-button'); //Constante del botón de personajes
-
 // eslint-disable-next-line no-unused-vars
 const directorButton = document.getElementById('director-button'); //Constante del botón de directores
-
 const moviesButton = document.getElementById('movies-button');
-
 const welcomeButton = document.getElementById('welcome-button');
-
 const searchInput = document.getElementById('search-input');
+
 
 //------------OCULTAR Y MOSTRAR SECCIONES 
 const welcomeSection = document.getElementById("welcome-page"); //Declaramos constante que guarda la sección welcome TENEMOS QUE MOVERLA AL BOTON QUE CORRESPONDA
-
 
 const sortAreaSection = document.getElementById('sortArea');
 
@@ -175,7 +173,7 @@ directorButton.addEventListener('click', (event) => {
     directorBox.innerHTML += `
     <li class="director-name" id="${director}<br>">${director}</li>`
 
-  /*  dataBaseContainer.innerHTML += `
+    /*  dataBaseContainer.innerHTML += `
     <li class="director-name" id="${element.director}<br>">${element.director}</li>
   `;
     //Se envía al div*/
