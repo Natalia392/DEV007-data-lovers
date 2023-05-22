@@ -127,7 +127,6 @@ function characterDisplay() {
     // Agregar el div del personaje al databaseContainer
     dataBaseContainer.appendChild(charDiv);
   });
-
 }
 
 
