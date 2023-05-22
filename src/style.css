@@ -325,7 +325,7 @@ zoom: inset 120%;
 
 }
 
-#order-button {
+#order-select {
     width: 100px;
     height: 40px;
     background: #2499b0 ;
@@ -344,7 +344,7 @@ zoom: inset 120%;
     color: #FFF5F5;
     cursor: pointer;
 }
-#order-button:hover {
+#order-select:hover {
     cursor: pointer;
     background-color: #4F4E48;
     color: #2499b0;

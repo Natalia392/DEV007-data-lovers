@@ -41,6 +41,7 @@ const moviesButton = document.getElementById('movies-button');
 const welcomeButton = document.getElementById('welcome-button');
 const searchInput = document.getElementById('search-input');
 const musicButton = document.getElementById('sincara-button');
+const orderButton = document.getElementById('order-button');
 
 
 //------------OCULTAR Y MOSTRAR SECCIONES 
@@ -63,14 +64,17 @@ function hideSortArea() {
 }
 function hideDirector(){
   directorBox.style.display = 'none'
-  dataBaseContainer.display = 'block'
+  dataBaseContainer.style.display = 'flex'
 }
 function showDirector(){
   dataBaseContainer.style.display = 'none'
-  directorBox.display = 'block'
+  directorBox.style.display = 'block'
 }
 
-
+function playMusic(){
+  const audio = new Audio(".src/img/music/ghiplipedia-song.mp3");
+  audio.play()
+}
 //showDirector();
 //Llamamos enseguida a función ocultar sort area, para que sólo muestre el welcome
 hideSortArea();
@@ -142,18 +146,20 @@ function characterDisplay() {
   characters.forEach((character) => {
     // Crear un div para cada personaje
     const charDiv = document.createElement('div');
-
+console.log(character);
     // Inyectar el HTML para mostrar el nombre y la imagen del personaje
     charDiv.innerHTML = `
       <h4 class="character-name">${character.name}</h4>
       <input type="image" id="${character.name}"class="character-img" src="${character.img}" alt="${character.img}">
-    `;
+      <p>Género: ${character.gender}</p>
+      `;
 
     // Agregar el div del personaje al databaseContainer
     dataBaseContainer.appendChild(charDiv);
     const characterCard = document.getElementById(character.name);
     console.log(characterCard);
     characterCard.addEventListener('click', ()=>{
+      console.log(character);
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
@@ -254,8 +260,13 @@ directorButton.addEventListener('click', (event) => {
 });*/
 
 //-----------------------------------------INICIALIZACIÓN DE BOTONES 
+//Musica
+
+musicButton.addEventListener('click', playMusic)
+
 
 //Escucha botón inicio
+
 welcomeButton.addEventListener('click', (event) => {
   event.preventDefault();
   hideSortArea();
@@ -278,6 +289,8 @@ localityButton.addEventListener('click', (event) => {
   event.preventDefault(event);
   localitiesDisplay();
 });
+
+
 
 //DIRECTORES (botón)
 
