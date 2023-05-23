@@ -72,7 +72,7 @@ function showDirector() {
 }
 
 function playMusic() {
-  const audio = new Audio(".src/img/music/ghiplipedia-song.mp3");
+  const audio = new Audio("./img/music/ghiplipedia-song.mp3");
   audio.play()
 }
 //showDirector();
@@ -112,14 +112,14 @@ function moviesDisplay() {
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
       <div class="movie-div1">
-      <img src="${movie.poster}" alt="${movie.title}">
+      <img class="movie-poster" src="${movie.poster}" alt="${movie.title}"><br>
+      <div>
+      <h3>${movie.title}</h3><br>
+      <p>Director: ${movie.director}</p><br>
+      <p>Producer: ${movie.producer}</p><br>
+      <p>Release_date: ${movie.release_date}</p><br>
+      <p>rt_score: ${movie.rt_score}</p><br>
       </div>
-      <divclass="movie-div2">
-      <h3>${movie.title}</h3>
-      <p>Director: ${movie.director}</p>
-      <p>Producer: ${movie.producer}</p>
-      <p>Release_date: ${movie.release_date}</p>
-      <p>rt_score: ${movie.rt_score}</p>
       </div>
       <div class="movie-div3">
       <p>Description: ${movie.description}</p>

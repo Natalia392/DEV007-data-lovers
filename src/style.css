@@ -355,10 +355,8 @@ header {
 
 }
 
-.movie-div1{
-    align-content: center;
-    height: 190px;
-    display: flex;
-    object-fit: cover;
-    cursor: pointer;
+.movie-div1 {
+display: flex;
+flex-wrap: wrap;
 }
+
