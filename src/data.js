@@ -51,38 +51,27 @@ export const filterDirector = (films) => {
   return directors;
 };
 
+
 //Ordenar alfabéticamente
-export const orderMovies = (order) =>{
-  films.sort(function (a, b) {
+export function orderDataAZ (data, order) {
+  const orderedData = data.sort(function (a, b) {
     const titleA = a.title.toUpperCase();
     const titleB = b.title.toUpperCase();
-    if (order === "asc") {
-      if (titleA < titleB) return -1;
-      if (titleA > titleB) return 1;
-    } else if (order === "desc") {
-      if (titleA > titleB) return -1;
-      if (titleA < titleB) return 1;
+    if(titleA < titleB) {
+      return -1;
+    } else {
+      return 1;
     }
-    return 0;
   });
-}
-/*export const orderData = (films) =>{
-  function orderA-Z(order) {
-    films.sort(function (a, b) {
-      const titleA = a.title.toUpperCase();
-      const titleB = b.title.toUpperCase();
-      if (order === "asc") {
-        if (titleA < titleB) return -1;
-        if (titleA > titleB) return 1;
-      } else if (order === "desc") {
-        if (titleA > titleB) return -1;
-        if (titleA < titleB) return 1;
-      }
-      return 0;
-    });
+  if (order === 'a-z') {
+    return orderedData
+  } else {
+    return orderedData.reverse();
   }
 }
-*/
+
+
+
 /*export const filterDirector = (films) => {
  const directorNames = 
  films.filter((directors) => directors.indexOf(films[director]) === -1) 

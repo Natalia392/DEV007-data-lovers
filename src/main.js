@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line no-unused-vars
-import { filterCharacter, filterLocalities, filterDirector, searchCharacterByName } from './data.js'; // importa la función...
+import { filterCharacter, filterLocalities, filterDirector, searchCharacterByName, orderDataAZ } from './data.js'; // importa la función...
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -41,7 +41,7 @@ const moviesButton = document.getElementById('movies-button');
 const welcomeButton = document.getElementById('welcome-button');
 const searchInput = document.getElementById('search-input');
 const musicButton = document.getElementById('sincara-button');
-const orderButton = document.getElementById('order-button');
+const orderButton = document.getElementById('order-select');
 
 
 //------------OCULTAR Y MOSTRAR SECCIONES 
@@ -62,16 +62,16 @@ function hideSortArea() {
   welcomeSection.style.display = 'block';
   sortAreaSection.style.display = 'none';
 }
-function hideDirector(){
+function hideDirector() {
   directorBox.style.display = 'none'
   dataBaseContainer.style.display = 'flex'
 }
-function showDirector(){
+function showDirector() {
   dataBaseContainer.style.display = 'none'
   directorBox.style.display = 'block'
 }
 
-function playMusic(){
+function playMusic() {
   const audio = new Audio(".src/img/music/ghiplipedia-song.mp3");
   audio.play()
 }
@@ -84,7 +84,6 @@ hideSortArea();
 
 
 //Función para mostrar películas
-
 function moviesDisplay() {
   hideWelcome();
   hideDirector();
@@ -97,16 +96,18 @@ function moviesDisplay() {
     //Se crea el div que contendrá el título de cada película y su respectiva portada
     const movieDiv = document.createElement('div');
 
-    //Se usar innerHTML para crear la estructura hmtl
+    //Se usar innerHTML para crear la estructura html
     movieDiv.innerHTML +=
       `<h4 class="movie-title" id="${movie.title}">${movie.title}<h4>
     <img class="movie-poster" src="${movie.poster}" id = "${movie.id}">`
 
     //se usa la función appendChild sobre el dataBaseContainer para introducir en éste el div recién creado
     dataBaseContainer.appendChild(movieDiv);
+
+    //Constante para que se generen las imágenes como 
     const movieCard = document.getElementById(movie.id);
     console.log(movieCard);
-    movieCard.addEventListener('click', ()=>{
+    movieCard.addEventListener('click', () => {
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
@@ -126,21 +127,63 @@ function moviesDisplay() {
       dataBaseContainer.appendChild(cardInfo);
 
     })
-  });
+  })
+
+  //selector de orden AZ
+  orderButton.addEventListener('change', () => {
+
+    const orderType = orderButton.value;
+
+    //dataBaseContainer.innerHTML = '';
+
+
+    const resultOrderData = orderDataAZ(films, orderType);
+    // console.log(orderDataAZ(films, orderType));
+    // console.log(resultOrderData);
+
+    dataBaseContainer.innerHTML = '';
+
+    resultOrderData.forEach(movie => {
+
+      //Se crea el div que contendrá el título de cada película y su respectiva portada
+      const movieDiv = document.createElement('div');
+
+      //Se usar innerHTML para crear la estructura html
+      movieDiv.innerHTML +=
+        `<h4 class="movie-title" id="${movie.title}">${movie.title}<h4>
+          <img class="movie-poster" src="${movie.poster}" id = "${movie.id}">`
+
+      //se usa la función appendChild sobre el dataBaseContainer para introducir en éste el div recién creado
+      dataBaseContainer.appendChild(movieDiv);
+      //Constante para que se generen las imágenes como 
+      const movieCard = document.getElementById(movie.id);
+      console.log(movieCard);
+      movieCard.addEventListener('click', () => {
+        const cardInfo = document.createElement('div');
+        dataBaseContainer.innerHTML = '';
+        cardInfo.innerHTML = `
+      <div class="movie-div1">
+      <img src="${movie.poster}" alt="${movie.title}">
+      </div>
+      <divclass="movie-div2">
+      <h3>${movie.title}</h3>
+      <p>Director: ${movie.director}</p>
+      <p>Producer: ${movie.producer}</p>
+      <p>Release_date: ${movie.release_date}</p>
+      <p>rt_score: ${movie.rt_score}</p>
+      </div>
+      <div class="movie-div3">
+      <p>Description: ${movie.description}</p>
+    `
+        dataBaseContainer.appendChild(cardInfo);
+
+      })
+
+    });
+  })
 }
 
 
-
-/*"id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
-"title": "Castle in the Sky",
-"description": "The orphan Sheeta inherited a mysterious crystal that links her to the mythical sky-kingdom of Laputa. With the help of resourceful Pazu and a rollicking band of sky pirates, she makes her way to the ruins of the once-great civilization. Sheeta and Pazu must outwit the evil Muska, who plans to use Laputa's science to make himself ruler of the world.",
-"director": "Hayao Miyazaki",
-"producer": "Isao Takahata",
-"poster": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Castle_in_the_Sky.jpg",
-"release_date": "1986",
-"rt_score": "95",
-"people"
-*/
 //Función para mostrar personajes
 function characterDisplay() {
 
@@ -153,7 +196,7 @@ function characterDisplay() {
   characters.forEach((character) => {
     // Crear un div para cada personaje
     const charDiv = document.createElement('div');
-console.log(character);
+    console.log(character);
     // Inyectar el HTML para mostrar el nombre y la imagen del personaje
     charDiv.innerHTML = `
       <h4 class="character-name">${character.name}</h4>
@@ -165,7 +208,7 @@ console.log(character);
     dataBaseContainer.appendChild(charDiv);
     const characterCard = document.getElementById(character.name);
     console.log(characterCard);
-    characterCard.addEventListener('click', ()=>{
+    characterCard.addEventListener('click', () => {
       console.log(character);
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
@@ -208,7 +251,7 @@ function localitiesDisplay() {
     dataBaseContainer.appendChild(localDiv);
     const locationCard = document.getElementById(location.name);
     console.log(locationCard);
-    locationCard.addEventListener('click', ()=>{
+    locationCard.addEventListener('click', () => {
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
@@ -255,16 +298,6 @@ directorButton.addEventListener('click', (event) => {
 });
 
 
-//-----------------USAR FOREACH PARA IMPLEMENTAR DATA DE LAS PELÍCULAS EN EL CONTENEDOR DE DATABASE
-
-
-//botón de personajes
-/*charButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  const characters = filterCharacter(films);
-  console.log(characters);
-
-});*/
 
 //-----------------------------------------INICIALIZACIÓN DE BOTONES 
 //Musica
@@ -296,7 +329,6 @@ localityButton.addEventListener('click', (event) => {
   event.preventDefault(event);
   localitiesDisplay();
 });
-
 
 
 //DIRECTORES (botón)
