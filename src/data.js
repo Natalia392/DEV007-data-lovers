@@ -10,7 +10,7 @@ export const filterCharacter = (films) => {
 
   for (const film of Object.values(films)) {
     for (const character of film.people) {
-      characters.push({ name: character.name, img: character.img, gender: character.gender });
+      characters.push({ name: character.name, img: character.img, gender: character.gender, age: character.age, eye_color: character.eye_color, hair_color: character.hair_color, specie: character.specie});
       
     }
   }
@@ -26,7 +26,7 @@ export const filterLocalities = (films) => {
     //recorre array locations almacena su llave-valor en localityObjects
     for (const localityObjects of filmObjects.locations) {
     //Se va sumando al array localities los datos que encuentra sefun lo solicitado (name + img)
-      localities.push({ name: localityObjects.name, img: localityObjects.img });
+      localities.push({ name: localityObjects.name, img: localityObjects.img, climate: localityObjects.climate, terrain: localityObjects.terrain, surface_water: localityObjects.surface_water });
     }
   }
   console.log(localities);

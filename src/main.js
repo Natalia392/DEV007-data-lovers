@@ -62,17 +62,17 @@ function hideSortArea() {
   welcomeSection.style.display = 'block';
   sortAreaSection.style.display = 'none';
 }
-function hideDirector(){
+function hideDirector() {
   directorBox.style.display = 'none'
   dataBaseContainer.style.display = 'flex'
 }
-function showDirector(){
+function showDirector() {
   dataBaseContainer.style.display = 'none'
   directorBox.style.display = 'block'
 }
 
-function playMusic(){
-  const audio = new Audio(".src/img/music/ghiplipedia-song.mp3");
+function playMusic() {
+  const audio = new Audio("./img/music/ghiplipedia-song.mp3");
   audio.play()
 }
 //showDirector();
@@ -107,16 +107,21 @@ function moviesDisplay() {
     //Constante para que se generen las imágenes como 
     const movieCard = document.getElementById(movie.id);
     console.log(movieCard);
-    movieCard.addEventListener('click', ()=>{
+    movieCard.addEventListener('click', () => {
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
-      <img src="${movie.poster}" alt="${movie.title}">
-      <h3>${movie.title}</h3>
-      <p>Director: ${movie.director}</p>
-      <p>Producer: ${movie.producer}</p>
-      <p>Release_date: ${movie.release_date}</p>
-      <p>rt_score: ${movie.rt_score}</p>
+      <div class="movie-div1">
+      <img class="movie-poster" src="${movie.poster}" alt="${movie.title}"><br>
+      <div>
+      <h3>${movie.title}</h3><br>
+      <p>Director: ${movie.director}</p><br>
+      <p>Producer: ${movie.producer}</p><br>
+      <p>Release_date: ${movie.release_date}</p><br>
+      <p>rt_score: ${movie.rt_score}</p><br>
+      </div>
+      </div>
+      <div class="movie-div3">
       <p>Description: ${movie.description}</p>
     `
       dataBaseContainer.appendChild(cardInfo);
@@ -150,6 +155,29 @@ function moviesDisplay() {
 
       //se usa la función appendChild sobre el dataBaseContainer para introducir en éste el div recién creado
       dataBaseContainer.appendChild(movieDiv);
+      //Constante para que se generen las imágenes como 
+      const movieCard = document.getElementById(movie.id);
+      console.log(movieCard);
+      movieCard.addEventListener('click', () => {
+        const cardInfo = document.createElement('div');
+        dataBaseContainer.innerHTML = '';
+        cardInfo.innerHTML = `
+      <div class="movie-div1">
+      <img src="${movie.poster}" alt="${movie.title}">
+      </div>
+      <divclass="movie-div2">
+      <h3>${movie.title}</h3>
+      <p>Director: ${movie.director}</p>
+      <p>Producer: ${movie.producer}</p>
+      <p>Release_date: ${movie.release_date}</p>
+      <p>rt_score: ${movie.rt_score}</p>
+      </div>
+      <div class="movie-div3">
+      <p>Description: ${movie.description}</p>
+    `
+        dataBaseContainer.appendChild(cardInfo);
+
+      })
 
     });
   })
@@ -180,7 +208,7 @@ function characterDisplay() {
     dataBaseContainer.appendChild(charDiv);
     const characterCard = document.getElementById(character.name);
     console.log(characterCard);
-    characterCard.addEventListener('click', ()=>{
+    characterCard.addEventListener('click', () => {
       console.log(character);
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
@@ -223,7 +251,7 @@ function localitiesDisplay() {
     dataBaseContainer.appendChild(localDiv);
     const locationCard = document.getElementById(location.name);
     console.log(locationCard);
-    locationCard.addEventListener('click', ()=>{
+    locationCard.addEventListener('click', () => {
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
@@ -321,6 +349,8 @@ searchInput.addEventListener('input', (event) => {
   }
 });
 //se llama a la función moviesDisplay una vez que se hace click en el botón de películas.
+
+
 
 
 

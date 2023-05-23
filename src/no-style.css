@@ -348,3 +348,7 @@ button :hover{
     justify-content: space-between;
     align-items: center;
 }
+.movie-div1{
+    display: flex;
+    flex-wrap: wrap;
+}
