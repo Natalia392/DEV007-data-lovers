@@ -84,14 +84,14 @@ hideSortArea();
 
 
 //Función para mostrar películas
-function moviesDisplay() {
+function moviesDisplay(movies) {
   hideWelcome();
   hideDirector();
   //Vaciamos el contenedor de contenido 
 
   dataBaseContainer.innerHTML = '';
 
-  films.forEach(movie => {
+  movies.forEach(movie => {
 
     //Se crea el div que contendrá el título de cada película y su respectiva portada
     const movieDiv = document.createElement('div');
@@ -135,23 +135,8 @@ function moviesDisplay() {
     const resultOrderData = orderDataAZ(films, orderType);
     // console.log(orderDataAZ(films, orderType));
     // console.log(resultOrderData);
+    moviesDisplay(resultOrderData);
 
-    dataBaseContainer.innerHTML = '';
-
-    resultOrderData.forEach(movie => {
-
-      //Se crea el div que contendrá el título de cada película y su respectiva portada
-      const movieDiv = document.createElement('div');
-
-      //Se usar innerHTML para crear la estructura html
-      movieDiv.innerHTML +=
-        `<h4 class="movie-title" id="${movie.title}">${movie.title}<h4>
-          <img class="movie-poster" src="${movie.poster}" id = "${movie.id}">`
-
-      //se usa la función appendChild sobre el dataBaseContainer para introducir en éste el div recién creado
-      dataBaseContainer.appendChild(movieDiv);
-
-    });
   })
 }
 
@@ -287,7 +272,7 @@ welcomeButton.addEventListener('click', (event) => {
 //Escucha botón películas
 moviesButton.addEventListener('click', (event) => {
   event.preventDefault();
-  moviesDisplay();
+  moviesDisplay(films);
 });
 
 //Escucha botón personajes
