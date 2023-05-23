@@ -7,7 +7,8 @@ nav {
     margin-top: 60px;
 }
 
-.nav-buttons, .search-by-word{
+.nav-buttons,
+.search-by-word {
     position: relative;
     margin-bottom: 10px;
 }
@@ -31,6 +32,7 @@ main {
     background-attachment: no-repeat;
     background-size: cover;
 }
+
 /*
 header {
     display: flex;
@@ -48,22 +50,22 @@ letter-spacing: 0.2em;
 color:#E9E3E3;
 }*/
 
-header{
+header {
     background: #236E70;
 
     display: flex;
-justify-content: space-evenly;
-align-items: center;
-height: 50px;
-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
-border:rgba(0, 0, 0, 1);
-position: fixed;
-width: 100%;
-margin-bottom: 50px;
-z-index: 2;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50px;
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    border: rgba(0, 0, 0, 1);
+    position: fixed;
+    width: 100%;
+    margin-bottom: 50px;
+    z-index: 2;
 }
 
-.logo-ghiblipedia{
+.logo-ghiblipedia {
     display: flex;
     flex-direction: row;
     height: 50px;
@@ -93,10 +95,11 @@ z-index: 2;
     min-width: 50%;
     z-index: -1;
     margin-right: -10%;
-filter: contrast(120%);
-filter: saturate(120%);}
+    filter: contrast(120%);
+    filter: saturate(120%);
+}
 
-#totorin:hover{
+#totorin:hover {
     display: none;
 }
 
@@ -130,7 +133,7 @@ filter: saturate(120%);}
 
 .character-name,
 .movie-title,
-.local-name:hover{
+.local-name:hover {
     font-weight: 600px;
 }
 
@@ -145,15 +148,15 @@ filter: saturate(120%);}
     cursor: pointer;
     object-fit: cover;
     box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
-opacity: 80%;
+    opacity: 80%;
 }
 
 .movie-poster:hover,
 .local-img:hover,
-.character-img:hover{
-opacity: 120%;
-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 3), 7px 7px 20px 0px rgba(0.5, 0.5, 0, 0.7), 4px 4px 5px 0px rgba(0.3, 0.3, 0.3, 0.6);
-zoom: inset 120%;
+.character-img:hover {
+    opacity: 120%;
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 3), 7px 7px 20px 0px rgba(0.5, 0.5, 0, 0.7), 4px 4px 5px 0px rgba(0.3, 0.3, 0.3, 0.6);
+    zoom: inset 120%;
 
 }
 
@@ -290,11 +293,11 @@ zoom: inset 120%;
     color: #4F4E48;
 }
 
-#search-input:hover{
+#search-input:hover {
     filter: brightness(120%);
 }
 
-#search-input::after{
+#search-input::after {
     filter: brightness(120%);
 }
 
@@ -328,7 +331,7 @@ zoom: inset 120%;
 #order-select {
     width: 100px;
     height: 40px;
-    background: #2499b0 ;
+    background: #2499b0;
     border-width: 0px 1.41429px 1.41429px 0px;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.5);
