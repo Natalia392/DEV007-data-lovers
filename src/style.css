@@ -120,7 +120,7 @@ header {
 
 .character-name,
 .movie-title,
-.local-name {
+.local-name{
     font-family: 'Londrina Solid';
     font-style: normal;
     font-weight: 400;
@@ -214,6 +214,7 @@ header {
     font-weight: 900;
     font-size: 32px;
     line-height: 144.5%;
+    margin: 30px;
     /* or 46px */
 
     text-align: center;
@@ -353,3 +354,9 @@ header {
     color: #2499b0;
 
 }
+
+.movie-div1 {
+display: flex;
+flex-wrap: wrap;
+}
+
