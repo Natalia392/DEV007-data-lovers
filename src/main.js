@@ -110,12 +110,17 @@ function moviesDisplay() {
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
+      <div class="movie-div1">
       <img src="${movie.poster}" alt="${movie.title}">
+      </div>
+      <divclass="movie-div2">
       <h3>${movie.title}</h3>
       <p>Director: ${movie.director}</p>
       <p>Producer: ${movie.producer}</p>
       <p>Release_date: ${movie.release_date}</p>
       <p>rt_score: ${movie.rt_score}</p>
+      </div>
+      <div class="movie-div3">
       <p>Description: ${movie.description}</p>
     `
       dataBaseContainer.appendChild(cardInfo);
@@ -123,6 +128,8 @@ function moviesDisplay() {
     })
   });
 }
+
+
 
 /*"id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
 "title": "Castle in the Sky",
@@ -312,35 +319,6 @@ searchInput.addEventListener('input', (event) => {
 //se llama a la función moviesDisplay una vez que se hace click en el botón de películas.
 
 
-function mostrarInformacionPersonaje(personajeId) {
-  // Encuentra el personaje correspondiente al ID
-  const personaje = characters.find(personaje => personaje.id === personajeId);
-  
-  if (!personaje) {
-    console.error('Personaje no encontrado');
-    return;
-  }
-  
-  // Crea un elemento <div> para el template de información
-  const template = document.createElement('div');
-  
-  // Agrega la clase CSS al elemento <div>
-  template.classList.add('informacion-personaje');
-  
-  // Crea el contenido del template con los datos del personaje
-  template.innerHTML = `
-    <img src="${personaje.img}" alt="${personaje.name}">
-    <h3>${personaje.name}</h3>
-    <p>Género: ${personaje.gender}</p>
-    <p>Edad: ${personaje.age}</p>
-    <p>Color de ojos: ${personaje.eye_color}</p>
-    <p>Color de cabello: ${personaje.hair_color}</p>
-    <p>Especie: ${personaje.specie}</p>
-  `;
-  
-  // Agrega el template al documento
-  document.body.appendChild(template);
-}
 
 
 

@@ -52,6 +52,20 @@ export const filterDirector = (films) => {
 };
 
 //Ordenar alfabéticamente
+export const orderMovies = (order) =>{
+  films.sort(function (a, b) {
+    const titleA = a.title.toUpperCase();
+    const titleB = b.title.toUpperCase();
+    if (order === "asc") {
+      if (titleA < titleB) return -1;
+      if (titleA > titleB) return 1;
+    } else if (order === "desc") {
+      if (titleA > titleB) return -1;
+      if (titleA < titleB) return 1;
+    }
+    return 0;
+  });
+}
 /*export const orderData = (films) =>{
   function orderA-Z(order) {
     films.sort(function (a, b) {

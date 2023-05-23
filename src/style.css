@@ -117,7 +117,7 @@ filter: saturate(120%);}
 
 .character-name,
 .movie-title,
-.local-name {
+.local-name{
     font-family: 'Londrina Solid';
     font-style: normal;
     font-weight: 400;
@@ -211,6 +211,7 @@ zoom: inset 120%;
     font-weight: 900;
     font-size: 32px;
     line-height: 144.5%;
+    margin: 30px;
     /* or 46px */
 
     text-align: center;
@@ -349,4 +350,12 @@ zoom: inset 120%;
     background-color: #4F4E48;
     color: #2499b0;
 
+}
+
+.movie-div1{
+    align-content: center;
+    height: 190px;
+    display: flex;
+    object-fit: cover;
+    cursor: pointer;
 }
