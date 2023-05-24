@@ -1,12 +1,11 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line no-unused-vars
-import { filterCharacter, filterLocalities, filterDirector, /*searchCharacterByName,*/ orderDataAZ, searchByTitle } from './data.js'; // importa la función...
+import { filterCharacter, filterLocalities, filterDirector, /*searchCharacterByName,*/ orderDataAZ, searchByTitle, calcData } from './data.js'; // importa la función...
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
 //------------SECCIÓN CONSTANTES de LA DATA
-
 
 const films = data.films; //declaramos la constante que nos guarda (o accede a) las películas
 
@@ -16,6 +15,7 @@ const localities = filterLocalities(films);
 const characters = filterCharacter(films);
 
 console.log(filterCharacter(films));
+console.log(calcData(films))
 
 //console.log(films);
 
@@ -92,7 +92,9 @@ function moviesDisplay(movies) {
   //Vaciamos el contenedor de contenido 
 
   dataBaseContainer.innerHTML = '';
-
+  const tituloDirector = document.getElementById('titulos');
+  tituloDirector.innerHTML =      `<h4 class="movie-title">${calcData(films)}<h4>
+ `
   movies.forEach(movie => {
 
     //Se crea el div que contendrá el título de cada película y su respectiva portada
@@ -145,7 +147,7 @@ function moviesDisplay(movies) {
     moviesDisplay(resultOrderData);
 
     dataBaseContainer.innerHTML = '';
-
+ 
     resultOrderData.forEach(movie => {
 
       //Se crea el div que contendrá el título de cada película y su respectiva portada
@@ -196,6 +198,8 @@ function characterDisplay() {
   dataBaseContainer.innerHTML = "";
 
   //Recorre los characters
+  const tituloDirector = document.getElementById('titulos');
+  tituloDirector.innerHTML = "Personajes";
   characters.forEach((character) => {
     // Crear un div para cada personaje
     const charDiv = document.createElement('div');
@@ -245,6 +249,8 @@ function localitiesDisplay() {
   //const localities = filterLocalities(films);
   //Recorre los characters
   console.log(localities);
+  const tituloDirector = document.getElementById('titulos');
+  tituloDirector.innerHTML = "Localidades";
   localities.forEach((location) => {
     //Crea el div
     const localDiv = document.createElement('div');//establecer su lugar desde html para darle una clase de card
@@ -291,7 +297,7 @@ directorButton.addEventListener('click', (event) => {
   //const arrayDir = directors.split();
   console.log(directors);
   //const arrayDirectors = directors.split(',')
-  const tituloDirector = document.getElementById('director-list');
+  const tituloDirector = document.getElementById('titulos');
   tituloDirector.innerHTML = "Director";
   directors.forEach((director) => {
     //Crea el div
