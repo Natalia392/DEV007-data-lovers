@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line no-unused-vars
-import { filterCharacter, filterLocalities, filterDirector, searchCharacterByName, orderDataAZ } from './data.js'; // importa la función...
+import { filterCharacter, filterLocalities, filterDirector, searchCharacterByName, orderDataAZ, searchByTitle } from './data.js'; // importa la función...
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -15,10 +15,12 @@ console.log(directors);
 const localities = filterLocalities(films);
 const characters = filterCharacter(films);
 
+console.log(filterCharacter(films));
+
 //console.log(films);
 
-/*console.log(searchByTitle(films, 'Castle in the Sky'));
-console.log(searchByTitle(films, 'castle in the sky'));*/
+console.log(searchByTitle(films, 'Castle in the Sky'));
+console.log(searchByTitle(films, 'castle in the sky'));
 
 //----------SECCIÓN CONSTANTES DE INTERACCIÓN CON DOM
 
@@ -297,7 +299,8 @@ localityButton.addEventListener('click', (event) => {
 
 searchInput.addEventListener('input', (event) => {
   // 1. declare and assign the value of the event's target to a variable AKA whatever is typed in the search bar
-  let inputValue = event.target.inputValue
+  let inputValue = event.target.value
+  console.log(inputValue);
 
   // 2. check: if input exists and if input is larger than 0
   if (inputValue && inputValue.trim().length > 0) {
@@ -309,6 +312,9 @@ searchInput.addEventListener('input', (event) => {
     // 5. return nothing
     // Mostrar un mensaje para indicar que no se encuentra la información
   }
+  const searchResult = searchByTitle(films, inputValue);
+  console.log(searchResult);
+  
 });
 //se llama a la función moviesDisplay una vez que se hace click en el botón de películas.
 
