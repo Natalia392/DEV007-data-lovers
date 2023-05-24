@@ -1,10 +1,5 @@
 // estas funciones son de ejemplo
 
-export const ghibliData = () => {
-  return 'ghibliData';
-};
-
-
 export const filterCharacter = (films) => {
   const characters = [];
 
@@ -14,7 +9,6 @@ export const filterCharacter = (films) => {
       
     }
   }
-
   return characters;
 };
 
@@ -29,7 +23,7 @@ export const filterLocalities = (films) => {
       localities.push({ name: localityObjects.name, img: localityObjects.img, climate: localityObjects.climate, terrain: localityObjects.terrain, surface_water: localityObjects.surface_water });
     }
   }
-  console.log(localities);
+  //console.log(localities);
   return localities;
 };
 
@@ -104,7 +98,7 @@ export const searchByTitle = (data, propertyValue) => {
 
 
 //Mostrar personaje según búsqueda
-export const searchCharacterByName = (data, propertyValue) => {
+/*export const searchCharacterByName = (data, propertyValue) => {
   const characterByName = data.filter(characterName => characterName.name.toLowerCase() === propertyValue.toLowerCase());
   return characterByName;
 };
@@ -113,4 +107,4 @@ export const searchCharacterByName = (data, propertyValue) => {
 export const searchLocationByName = (data, propertyValue) => {
   const locationByName = data.filter(locationName => locationName.name.toLowerCase() === propertyValue.toLowerCase());
   return locationByName; 
-}
+} */

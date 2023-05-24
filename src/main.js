@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line no-unused-vars
-import { filterCharacter, filterLocalities, filterDirector, searchCharacterByName, orderDataAZ } from './data.js'; // importa la función...
+import { filterCharacter, filterLocalities, filterDirector, /*searchCharacterByName,*/ orderDataAZ, searchByTitle } from './data.js'; // importa la función...
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -15,10 +15,12 @@ console.log(directors);
 const localities = filterLocalities(films);
 const characters = filterCharacter(films);
 
+console.log(filterCharacter(films));
+
 //console.log(films);
 
-/*console.log(searchByTitle(films, 'Castle in the Sky'));
-console.log(searchByTitle(films, 'castle in the sky'));*/
+console.log(searchByTitle(films, 'Castle in the Sky'));
+console.log(searchByTitle(films, 'castle in the sky'));
 
 //----------SECCIÓN CONSTANTES DE INTERACCIÓN CON DOM
 
@@ -84,14 +86,14 @@ hideSortArea();
 
 
 //Función para mostrar películas
-function moviesDisplay() {
+function moviesDisplay(movies) {
   hideWelcome();
   hideDirector();
   //Vaciamos el contenedor de contenido 
 
   dataBaseContainer.innerHTML = '';
 
-  films.forEach(movie => {
+  movies.forEach(movie => {
 
     //Se crea el div que contendrá el título de cada película y su respectiva portada
     const movieDiv = document.createElement('div');
@@ -140,6 +142,7 @@ function moviesDisplay() {
     const resultOrderData = orderDataAZ(films, orderType);
     // console.log(orderDataAZ(films, orderType));
     // console.log(resultOrderData);
+    moviesDisplay(resultOrderData);
 
     dataBaseContainer.innerHTML = '';
 
@@ -323,7 +326,7 @@ welcomeButton.addEventListener('click', (event) => {
 //Escucha botón películas
 moviesButton.addEventListener('click', (event) => {
   event.preventDefault();
-  moviesDisplay();
+  moviesDisplay(films);
 });
 
 //Escucha botón personajes
@@ -341,20 +344,28 @@ localityButton.addEventListener('click', (event) => {
 
 //DIRECTORES (botón)
 
-searchInput.addEventListener('input', (event) => {
+searchButton.addEventListener('click', (/*event*/) => {
+
+  let myInput = searchInput.value;
   // 1. declare and assign the value of the event's target to a variable AKA whatever is typed in the search bar
-  let inputValue = event.target.inputValue
+  //let inputValue = event.target.value
+  //console.log(inputValue);
 
   // 2. check: if input exists and if input is larger than 0
-  if (inputValue && inputValue.trim().length > 0) {
+  if (myInput && myInput.trim().length > 0) {
     // 3. redefine 'value' to exclude white space and change input to all lowercase
-    inputValue = inputValue.trim().toLowerCase()
+    myInput = myInput.trim().toLowerCase()
     // 4. return the results only if the value of the search is included in the person's name
     // we need to write code (a function for filtering through our data to include the search input value)
   } else {
     // 5. return nothing
     // Mostrar un mensaje para indicar que no se encuentra la información
   }
+  const searchResult = searchByTitle(films, myInput);
+  console.log(searchByTitle(films, myInput));
+  console.log(searchResult);
+  moviesDisplay(searchResult);
+  
 });
 //se llama a la función moviesDisplay una vez que se hace click en el botón de películas.
 
