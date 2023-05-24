@@ -201,7 +201,6 @@ function characterDisplay() {
     charDiv.innerHTML = `
       <h4 class="character-name">${character.name}</h4>
       <input type="image" id="${character.name}"class="character-img" src="${character.img}" alt="${character.img}">
-      <p>Género: ${character.gender}</p>
       `;
 
     // Agregar el div del personaje al databaseContainer
