@@ -114,13 +114,13 @@ function moviesDisplay(movies) {
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
       <div class="movie-div1">
-      <img class="movie-poster" src="${movie.poster}" alt="${movie.title}"><br>
-      <div>
+      <img class="movie-poster-card" src="${movie.poster}" alt="${movie.title}"><br>
+      <div class="movie-info">
       <h3>${movie.title}</h3><br>
-      <p>Director: ${movie.director}</p><br>
-      <p>Producer: ${movie.producer}</p><br>
-      <p>Release_date: ${movie.release_date}</p><br>
-      <p>rt_score: ${movie.rt_score}</p><br>
+      <p>Director: ${movie.director}</p>
+      <p>Producer: ${movie.producer}</p>
+      <p>Release_date: ${movie.release_date}</p>
+      <p>rt_score: ${movie.rt_score}</p>
       </div>
       </div>
       <div class="movie-div3">
@@ -144,6 +144,45 @@ function moviesDisplay(movies) {
     // console.log(resultOrderData);
     moviesDisplay(resultOrderData);
 
+    dataBaseContainer.innerHTML = '';
+
+    resultOrderData.forEach(movie => {
+
+      //Se crea el div que contendrá el título de cada película y su respectiva portada
+      const movieDiv = document.createElement('div');
+
+      //Se usar innerHTML para crear la estructura html
+      movieDiv.innerHTML +=
+        `<h4 class="movie-title" id="${movie.title}">${movie.title}<h4>
+          <img class="movie-poster" src="${movie.poster}" id = "${movie.id}">`
+
+      //se usa la función appendChild sobre el dataBaseContainer para introducir en éste el div recién creado
+      dataBaseContainer.appendChild(movieDiv);
+      //Constante para que se generen las imágenes como 
+      const movieCard = document.getElementById(movie.id);
+      console.log(movieCard);
+      movieCard.addEventListener('click', () => {
+        const cardInfo = document.createElement('div');
+        dataBaseContainer.innerHTML = '';
+        cardInfo.innerHTML = `
+      <div class="movie-div1">
+      <img src="${movie.poster}" alt="${movie.title}">
+      </div>
+      <div class="movie-div2">
+      <h3>${movie.title}</h3>
+      <p>Director: ${movie.director}</p>
+      <p>Producer: ${movie.producer}</p>
+      <p>Release date: ${movie.release_date}</p>
+      <p>Rating score: ${movie.rt_score}</p>
+      </div>
+      <div class="movie-div3">
+      <p>Description: ${movie.description}</p>
+    `
+        dataBaseContainer.appendChild(cardInfo);
+
+      })
+
+    });
   })
 }
 
@@ -177,13 +216,17 @@ function characterDisplay() {
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
-      <img src="${character.img}" alt="${character.name}">
+      <div class="movie-div1">
+      <img class="movie-poster-card" src="${character.img}" alt="${character.name}">
+      <div class ="movie-info">
       <h3>${character.name}</h3>
       <p>Género: ${character.gender}</p>
       <p>Edad: ${character.age}</p>
       <p>Color de ojos: ${character.eye_color}</p>
       <p>Color de cabello: ${character.hair_color}</p>
       <p>Especie: ${character.specie}</p>
+      </div>
+      </div>
     `
       dataBaseContainer.appendChild(cardInfo);
 
@@ -219,11 +262,15 @@ function localitiesDisplay() {
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
+      <div class=".movie-poster-card">
       <img src="${location.img}" alt="${location.name}">
+      <div class="movie-info">
       <h3>${location.name}</h3>
       <p>Climate: ${location.climate}</p>
       <p>Terrain: ${location.terrain}</p>
       <p>Surface water: ${location.surface_water}</p>
+      </div>
+      </div>
     `
       dataBaseContainer.appendChild(cardInfo);
 
