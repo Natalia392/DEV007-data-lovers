@@ -348,7 +348,8 @@ button :hover{
     justify-content: space-between;
     align-items: center;
 }
-.movie-div1{
+.movie-poster-card{
     display: flex;
     flex-wrap: wrap;
+    width: 300px;
 }

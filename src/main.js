@@ -112,13 +112,13 @@ function moviesDisplay() {
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
       <div class="movie-div1">
-      <img class="movie-poster" src="${movie.poster}" alt="${movie.title}"><br>
-      <div>
+      <img class="movie-poster-card" src="${movie.poster}" alt="${movie.title}"><br>
+      <div class="movie-info">
       <h3>${movie.title}</h3><br>
-      <p>Director: ${movie.director}</p><br>
-      <p>Producer: ${movie.producer}</p><br>
-      <p>Release_date: ${movie.release_date}</p><br>
-      <p>rt_score: ${movie.rt_score}</p><br>
+      <p>Director: ${movie.director}</p>
+      <p>Producer: ${movie.producer}</p>
+      <p>Release_date: ${movie.release_date}</p>
+      <p>rt_score: ${movie.rt_score}</p>
       </div>
       </div>
       <div class="movie-div3">
@@ -165,12 +165,12 @@ function moviesDisplay() {
       <div class="movie-div1">
       <img src="${movie.poster}" alt="${movie.title}">
       </div>
-      <divclass="movie-div2">
+      <div class="movie-div2">
       <h3>${movie.title}</h3>
       <p>Director: ${movie.director}</p>
       <p>Producer: ${movie.producer}</p>
-      <p>Release_date: ${movie.release_date}</p>
-      <p>rt_score: ${movie.rt_score}</p>
+      <p>Release date: ${movie.release_date}</p>
+      <p>Rating score: ${movie.rt_score}</p>
       </div>
       <div class="movie-div3">
       <p>Description: ${movie.description}</p>
@@ -213,13 +213,17 @@ function characterDisplay() {
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
-      <img src="${character.img}" alt="${character.name}">
+      <div class="movie-div1">
+      <img class="movie-poster-card" src="${character.img}" alt="${character.name}">
+      <div class ="movie-info">
       <h3>${character.name}</h3>
       <p>Género: ${character.gender}</p>
       <p>Edad: ${character.age}</p>
       <p>Color de ojos: ${character.eye_color}</p>
       <p>Color de cabello: ${character.hair_color}</p>
       <p>Especie: ${character.specie}</p>
+      </div>
+      </div>
     `
       dataBaseContainer.appendChild(cardInfo);
 
@@ -255,11 +259,15 @@ function localitiesDisplay() {
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
+      <div class=".movie-poster-card">
       <img src="${location.img}" alt="${location.name}">
+      <div class="movie-info">
       <h3>${location.name}</h3>
       <p>Climate: ${location.climate}</p>
       <p>Terrain: ${location.terrain}</p>
       <p>Surface water: ${location.surface_water}</p>
+      </div>
+      </div>
     `
       dataBaseContainer.appendChild(cardInfo);
 
