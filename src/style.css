@@ -15,7 +15,7 @@ nav {
 
 body {
     background-image: linear-gradient(to bottom left, #34b4dc, #cbd39a);
-    background-attachment: no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -52,7 +52,7 @@ color:#E9E3E3;
 
 header {
     background: #236E70;
-
+    margin: 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
