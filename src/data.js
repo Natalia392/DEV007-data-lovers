@@ -5,8 +5,8 @@ export const filterCharacter = (films) => {
 
   for (const film of Object.values(films)) {
     for (const character of film.people) {
-      characters.push({ name: character.name, img: character.img, gender: character.gender, age: character.age, eye_color: character.eye_color, hair_color: character.hair_color, specie: character.specie});
-      
+      characters.push({ name: character.name, img: character.img, gender: character.gender, age: character.age, eye_color: character.eye_color, hair_color: character.hair_color, specie: character.specie });
+
     }
   }
   return characters;
@@ -19,7 +19,7 @@ export const filterLocalities = (films) => {
   for (const filmObjects of Object.values(films)) {
     //recorre array locations almacena su llave-valor en localityObjects
     for (const localityObjects of filmObjects.locations) {
-    //Se va sumando al array localities los datos que encuentra sefun lo solicitado (name + img)
+      //Se va sumando al array localities los datos que encuentra sefun lo solicitado (name + img)
       localities.push({ name: localityObjects.name, img: localityObjects.img, climate: localityObjects.climate, terrain: localityObjects.terrain, surface_water: localityObjects.surface_water });
     }
   }
@@ -47,11 +47,11 @@ export const filterDirector = (films) => {
 
 
 //Ordenar alfabéticamente
-export function orderDataAZ (data, order) {
+export function orderDataAZ(data, order) {
   const orderedData = data.sort(function (a, b) {
     const titleA = a.title.toUpperCase();
     const titleB = b.title.toUpperCase();
-    if(titleA < titleB) {
+    if (titleA < titleB) {
       return -1;
     } else {
       return 1;
@@ -108,3 +108,13 @@ export const searchLocationByName = (data, propertyValue) => {
   const locationByName = data.filter(locationName => locationName.name.toLowerCase() === propertyValue.toLowerCase());
   return locationByName; 
 } */
+
+export const calcData = (films) => {
+  const allCharacter = filterCharacter(films);
+  const humans = allCharacter.filter(character => character.specie === "Human")
+  const noHumans = allCharacter.filter(character => character.specie !== "Human")
+  const calcResult = "Existen " + humans.length + " personajes humanos y " + noHumans.length + " de otras especies";
+
+  return calcResult
+}
+//

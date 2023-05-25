@@ -11,7 +11,6 @@
 
 <body>
   <img id="totorin" alt="totorin" src="img/totorin.png">
-  <button class="music-button" id="sincara-button" type="button"><img src="./img/Buttons/minihakubutton.png" alt=""></button>
 
 
   <!--<img id="totoro-background" alt="fondo-totoro" src="img/totoro-background-no-píxel.JPG">
@@ -42,6 +41,7 @@
       <button class="filter-buttons" id="director-button">Directores</button>
     </div>
     <div class="search-by-word">
+      <button id="sincara-button">Play me!</button>
       <input type="text" id="search-input" placeholder="¿Qué buscas?" />
       <button id="search-button">Buscar</button>
       <select id="order-select"> Ordenar
@@ -74,9 +74,12 @@
     </section>
 
     <section class="sort-area" id="sortArea">
-      <h2 id="director-list"></h2>
+      <div id="titulos">
+      </div>
       <div class="containers" id="director-box"></div>
-      <div class="containers" id="database-container"></div>
+      <div class="containers" id="database-container">
+        <h2 class="titulos"></h2>
+      </div>
       <div class = "containers" id="detailed-info"></div>
     </section>
   </main>
