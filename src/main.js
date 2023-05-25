@@ -28,8 +28,7 @@ console.log(searchByTitle(films, 'castle in the sky'));
 
 const dataBaseContainer = document.getElementById('database-container'); //Declaración de la variable que contendra los elementos a insertar en el hmtl
 const directorBox = document.getElementById('director-box'); //Declaracion caja directores para lista
-// eslint-disable-next-line no-unused-vars
-const detailedInfo = document.getElementById('detailed-info'); //Para las tarjetas con info sobre películas, personajes y localidades
+const calculo = document.getElementById('calculo');
 
 //------------------------------BOTONES
 
@@ -70,13 +69,14 @@ function hideDirector() {
 }
 function showDirector() {
   dataBaseContainer.style.display = 'none'
-  directorBox.style.display = 'block'
+  directorBox.style.display = 'flex'
 }
 
 function playMusic() {
   const audio = new Audio("./img/music/ghiplipedia-song.mp3");
   audio.play()
 }
+
 //showDirector();
 //Llamamos enseguida a función ocultar sort area, para que sólo muestre el welcome
 hideSortArea();
@@ -90,11 +90,11 @@ function moviesDisplay(movies) {
   hideWelcome();
   hideDirector();
   //Vaciamos el contenedor de contenido 
+  calculo.innerHTML = '';
 
   dataBaseContainer.innerHTML = '';
-  const tituloDirector = document.getElementById('titulos');
-  tituloDirector.innerHTML =      `<h4 class="movie-title">${calcData(films)}<h4>
- `
+  const tittleMovies = document.getElementById('titulos');
+  tittleMovies.innerHTML = "Películas";
   movies.forEach(movie => {
 
     //Se crea el div que contendrá el título de cada película y su respectiva portada
@@ -135,7 +135,7 @@ function moviesDisplay(movies) {
 
   //selector de orden AZ
   orderButton.addEventListener('change', () => {
-
+    calculo.innerHTML = '';
     const orderType = orderButton.value;
 
     //dataBaseContainer.innerHTML = '';
@@ -198,8 +198,9 @@ function characterDisplay() {
   dataBaseContainer.innerHTML = "";
 
   //Recorre los characters
-  const tituloDirector = document.getElementById('titulos');
-  tituloDirector.innerHTML = "Personajes";
+  const titleCharacter = document.getElementById('titulos');
+  titleCharacter.innerHTML = "Personajes";
+  calculo.innerHTML = `<h4 class="character-name">${calcData(films)}</h4>`;
   characters.forEach((character) => {
     // Crear un div para cada personaje
     const charDiv = document.createElement('div');
@@ -244,13 +245,14 @@ function localitiesDisplay() {
   hideWelcome();
   hideDirector();
   //Vaciar contenedor
+  calculo.innerHTML = '';
   dataBaseContainer.innerHTML = "";
   //Declara funcion con parametro
   //const localities = filterLocalities(films);
   //Recorre los characters
   console.log(localities);
-  const tituloDirector = document.getElementById('titulos');
-  tituloDirector.innerHTML = "Localidades";
+  const titleLocalities = document.getElementById('titulos');
+  titleLocalities.innerHTML = "Localidades";
   localities.forEach((location) => {
     //Crea el div
     const localDiv = document.createElement('div');//establecer su lugar desde html para darle una clase de card
@@ -267,8 +269,8 @@ function localitiesDisplay() {
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
-      <div class=".movie-poster-card">
-      <img src="${location.img}" alt="${location.name}">
+      <div class="movie-div1">
+      <img class="movie-poster-card" src="${location.img}" alt="${location.name}">
       <div class="movie-info">
       <h3>${location.name}</h3>
       <p>Climate: ${location.climate}</p>
@@ -292,17 +294,21 @@ directorButton.addEventListener('click', (event) => {
   hideWelcome();
   showDirector()
   //Vaciar contenedor
+  calculo.innerHTML = '';
   directorBox.innerHTML = "";
   //Declara funcion con parametro
   //const arrayDir = directors.split();
   console.log(directors);
   //const arrayDirectors = directors.split(',')
-  const tituloDirector = document.getElementById('titulos');
-  tituloDirector.innerHTML = "Director";
+  const titleDirector = document.getElementById('titulos');
+  titleDirector.innerHTML = "Director";
   directors.forEach((director) => {
     //Crea el div
     directorBox.innerHTML += `
-    <li class="director-name" id="${director}<br>">${director}</li>`
+    <div class="directors">
+    <p class="director-name" id="${director}<br>">${director}</p>
+    </div>
+    `
 
     /*  dataBaseContainer.innerHTML += `
     <li class="director-name" id="${element.director}<br>">${element.director}</li>

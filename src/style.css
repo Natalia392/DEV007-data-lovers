@@ -1,4 +1,8 @@
 /*ESTILOS GHIBLIPEDIA*/
+html{
+    margin:0px;
+}
+
 nav {
     text-align: center;
     display: flex;
@@ -133,6 +137,16 @@ header {
     border-radius: 10px;
     margin-top: 5%;
     padding: 5%;
+    font-family: 'Londrina Solid';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #4F4E48;
 }
 
 
@@ -223,7 +237,7 @@ header {
 
 }
 
-.welcome-title {
+.welcome-title, #titulos {
     display: flex;
     justify-content: center;
     font-family: 'Londrina Solid';
@@ -395,7 +409,7 @@ padding: 5px;
     font-family: 'Londrina Solid';
     font-style: normal;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 23px;
     line-height: 20px;
     text-align: right;
     letter-spacing: 0.1em;
@@ -426,3 +440,19 @@ padding: 5px;
     display:flex;
     flex-direction: row;
 }
+/*.directors{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Londrina Solid';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #4F4E48;
+    padding: 20px;
+    margin-top: -50px;
+}*/
