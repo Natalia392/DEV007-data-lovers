@@ -72,15 +72,29 @@ header {
     opacity: 90;
 }
 #sincara-button{
-    position: absolute;
-    top: 20%;
-    left: 6%;
-    width: 100%;
-    z-index: -1;
-    filter: contrast(120%);
-    filter: saturate(120%);
-    background-color: rgba(0, 139, 139, 0);
-    border-style: none;
+    width: 100px;
+    height: 40px;
+    background: #7860a1d2;
+    border-width: 0px 1.41429px 1.41429px 0px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .2), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    border-radius: 7.07143px;
+    font-family: 'Londrina Solid';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #FFF5F5;
+    cursor: pointer;
+}
+#sincara-button:hover{
+    cursor: pointer;
+    background-color: #4F4E48;
+    color: #aa7bf5;
+
 }
 
 #banner {
