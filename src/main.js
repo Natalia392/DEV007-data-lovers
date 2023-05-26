@@ -3,24 +3,15 @@
 import { filterCharacter, filterLocalities, filterDirector, /*searchCharacterByName,*/ orderDataAZ, searchByTitle, calcData } from './data.js'; // importa la función...
 // import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
-// import data from './data/rickandmorty/rickandmorty.js';
 
 //------------SECCIÓN CONSTANTES de LA DATA
 
 const films = data.films; //declaramos la constante que nos guarda (o accede a) las películas
 
 const directors = filterDirector(films);
-console.log(directors);
 const localities = filterLocalities(films);
 const characters = filterCharacter(films);
 
-console.log(filterCharacter(films));
-console.log(calcData(films))
-
-//console.log(films);
-
-console.log(searchByTitle(films, 'Castle in the Sky'));
-console.log(searchByTitle(films, 'castle in the sky'));
 
 //----------SECCIÓN CONSTANTES DE INTERACCIÓN CON DOM
 
@@ -32,11 +23,9 @@ const calculo = document.getElementById('calculo');
 
 //------------------------------BOTONES
 
-// eslint-disable-next-line no-unused-vars
 const searchButton = document.getElementById('search-button'); //Constante del botón de búsqueda
 const localityButton = document.getElementById('locality-button'); //constante del botón de localidades
 const charButton = document.getElementById('character-button'); //Constante del botón de personajes
-// eslint-disable-next-line no-unused-vars
 const directorButton = document.getElementById('director-button'); //Constante del botón de directores
 const moviesButton = document.getElementById('movies-button');
 const welcomeButton = document.getElementById('welcome-button');
@@ -47,9 +36,7 @@ const orderButton = document.getElementById('order-select');
 
 //------------OCULTAR Y MOSTRAR SECCIONES 
 const welcomeSection = document.getElementById("welcome-page"); //Declaramos constante que guarda la sección welcome TENEMOS QUE MOVERLA AL BOTON QUE CORRESPONDA
-
 const sortAreaSection = document.getElementById('sortArea');
-
 
 //----------------------SECCIÓN FUNCIONES
 
@@ -76,15 +63,10 @@ function playMusic() {
   const audio = new Audio("./img/music/ghiplipedia-song.mp3");
   audio.play()
 }
-
-//showDirector();
 //Llamamos enseguida a función ocultar sort area, para que sólo muestre el welcome
 hideSortArea();
 
-
 //---- FUNCIONES MOSTRADORAS 
-
-
 //Función para mostrar películas
 function moviesDisplay(movies) {
   hideWelcome();
@@ -188,9 +170,8 @@ function moviesDisplay(movies) {
   })
 }
 
-
 //Función para mostrar personajes
-function characterDisplay() {
+function characterDisplay(characters) {
 
   hideWelcome();
   hideDirector();
@@ -238,10 +219,8 @@ function characterDisplay() {
   });
 }
 
-
-
 //Función para mostrar localidades
-function localitiesDisplay() {
+function localitiesDisplay(localities) {
   hideWelcome();
   hideDirector();
   //Vaciar contenedor
@@ -287,8 +266,36 @@ function localitiesDisplay() {
   });
 }
 
-//_-----------------FILTERDIRECTOR TERMINAR Y FACTORIZAR
+//-----------------------------------------INICIALIZACIÓN DE BOTONES 
 
+//Musica
+musicButton.addEventListener('click', playMusic)
+
+//Escucha botón inicio
+welcomeButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  hideSortArea();
+});
+
+//Escucha botón películas
+moviesButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  moviesDisplay(films);
+});
+
+//Escucha botón personajes
+charButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  characterDisplay(characters);
+});
+
+//Escucha el botón de localidades
+localityButton.addEventListener('click', (event) => {
+  event.preventDefault(event);
+  localitiesDisplay(localities);
+});
+
+//DIRECTORES (botón)
 directorButton.addEventListener('click', (event) => {
   event.preventDefault();
   hideWelcome();
@@ -310,51 +317,10 @@ directorButton.addEventListener('click', (event) => {
     </div>
     `
 
-    /*  dataBaseContainer.innerHTML += `
-    <li class="director-name" id="${element.director}<br>">${element.director}</li>
-  `;
-    //Se envía al div*/
-    //dataBaseContainer.appendChild(tituloDirector);
-
   });
 });
 
-
-
-//-----------------------------------------INICIALIZACIÓN DE BOTONES 
-//Musica
-
-musicButton.addEventListener('click', playMusic)
-
-
-//Escucha botón inicio
-
-welcomeButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  hideSortArea();
-});
-
-//Escucha botón películas
-moviesButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  moviesDisplay(films);
-});
-
-//Escucha botón personajes
-charButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  characterDisplay();
-});
-
-//Escucha el botón de localidades
-localityButton.addEventListener('click', (event) => {
-  event.preventDefault(event);
-  localitiesDisplay();
-});
-
-
-//DIRECTORES (botón)
-
+//Click del search bar
 searchButton.addEventListener('click', (/*event*/) => {
 
   let myInput = searchInput.value;
@@ -378,7 +344,6 @@ searchButton.addEventListener('click', (/*event*/) => {
   moviesDisplay(searchResult);
   
 });
-//se llama a la función moviesDisplay una vez que se hace click en el botón de películas.
 
 
 
