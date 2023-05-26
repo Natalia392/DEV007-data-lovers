@@ -19,8 +19,7 @@ const characters = filterCharacter(films);
 
 const dataBaseContainer = document.getElementById('database-container'); //Declaración de la variable que contendra los elementos a insertar en el hmtl
 const directorBox = document.getElementById('director-box'); //Declaracion caja directores para lista
-// eslint-disable-next-line no-unused-vars
-const detailedInfo = document.getElementById('detailed-info'); //Para las tarjetas con info sobre películas, personajes y localidades
+const calculo = document.getElementById('calculo');
 
 //------------------------------BOTONES
 
@@ -57,7 +56,7 @@ function hideDirector() {
 }
 function showDirector() {
   dataBaseContainer.style.display = 'none'
-  directorBox.style.display = 'block'
+  directorBox.style.display = 'flex'
 }
 
 function playMusic() {
@@ -73,11 +72,11 @@ function moviesDisplay(movies) {
   hideWelcome();
   hideDirector();
   //Vaciamos el contenedor de contenido 
+  calculo.innerHTML = '';
 
   dataBaseContainer.innerHTML = '';
-  const tituloDirector = document.getElementById('titulos');
-  tituloDirector.innerHTML =      `<h4 class="movie-title">${calcData(films)}<h4>
-  `
+  const tittleMovies = document.getElementById('titulos');
+  tittleMovies.innerHTML = "Películas";
   movies.forEach(movie => {
 
     //Se crea el div que contendrá el título de cada película y su respectiva portada
@@ -104,12 +103,12 @@ function moviesDisplay(movies) {
       <h3>${movie.title}</h3><br>
       <p>Director: ${movie.director}</p>
       <p>Producer: ${movie.producer}</p>
-      <p>Release_date: ${movie.release_date}</p>
-      <p>rt_score: ${movie.rt_score}</p>
+      <p>Release date: ${movie.release_date}</p>
+      <p>Rating score: ${movie.rt_score}</p>
       </div>
       </div>
       <div class="movie-div3">
-      <p>Description: ${movie.description}</p>
+      <p>${movie.description}</p>
     `
       dataBaseContainer.appendChild(cardInfo);
 
@@ -118,7 +117,7 @@ function moviesDisplay(movies) {
 
   //selector de orden AZ
   orderButton.addEventListener('change', () => {
-
+    calculo.innerHTML = '';
     const orderType = orderButton.value;
 
     //dataBaseContainer.innerHTML = '';
@@ -180,8 +179,9 @@ function characterDisplay(characters) {
   dataBaseContainer.innerHTML = "";
 
   //Recorre los characters
-  const tituloDirector = document.getElementById('titulos');
-  tituloDirector.innerHTML = "Personajes";
+  const titleCharacter = document.getElementById('titulos');
+  titleCharacter.innerHTML = "Personajes";
+  calculo.innerHTML = `<h4 class="character-name">${calcData(films)}</h4>`;
   characters.forEach((character) => {
     // Crear un div para cada personaje
     const charDiv = document.createElement('div');
@@ -224,13 +224,14 @@ function localitiesDisplay(localities) {
   hideWelcome();
   hideDirector();
   //Vaciar contenedor
+  calculo.innerHTML = '';
   dataBaseContainer.innerHTML = "";
   //Declara funcion con parametro
   //const localities = filterLocalities(films);
   //Recorre los characters
   console.log(localities);
-  const tituloDirector = document.getElementById('titulos');
-  tituloDirector.innerHTML = "Localidades";
+  const titleLocalities = document.getElementById('titulos');
+  titleLocalities.innerHTML = "Localidades";
   localities.forEach((location) => {
     //Crea el div
     const localDiv = document.createElement('div');//establecer su lugar desde html para darle una clase de card
@@ -247,8 +248,8 @@ function localitiesDisplay(localities) {
       const cardInfo = document.createElement('div');
       dataBaseContainer.innerHTML = '';
       cardInfo.innerHTML = `
-      <div class=".movie-poster-card">
-      <img src="${location.img}" alt="${location.name}">
+      <div class="movie-div1">
+      <img class="movie-poster-card" src="${location.img}" alt="${location.name}">
       <div class="movie-info">
       <h3>${location.name}</h3>
       <p>Climate: ${location.climate}</p>
@@ -300,24 +301,28 @@ directorButton.addEventListener('click', (event) => {
   hideWelcome();
   showDirector()
   //Vaciar contenedor
+  calculo.innerHTML = '';
   directorBox.innerHTML = "";
   //Declara funcion con parametro
   //const arrayDir = directors.split();
   console.log(directors);
   //const arrayDirectors = directors.split(',')
-  const tituloDirector = document.getElementById('titulos');
-  tituloDirector.innerHTML = "Director";
+  const titleDirector = document.getElementById('titulos');
+  titleDirector.innerHTML = "Directores";
   directors.forEach((director) => {
     //Crea el div
     directorBox.innerHTML += `
-    <li class="director-name" id="${director}<br>">${director}</li>`
+    <div class="directors">
+    <p class="director-name" id="${director}<br>">${director}</p>
+    </div>
+    `
 
   });
 });
 
 //Click del search bar
 searchButton.addEventListener('click', (/*event*/) => {
-
+  hideWelcome();
   let myInput = searchInput.value;
   // 1. declare and assign the value of the event's target to a variable AKA whatever is typed in the search bar
   //let inputValue = event.target.value
@@ -325,18 +330,30 @@ searchButton.addEventListener('click', (/*event*/) => {
 
   // 2. check: if input exists and if input is larger than 0
   if (myInput && myInput.trim().length > 0) {
+    hideDirector();
     // 3. redefine 'value' to exclude white space and change input to all lowercase
-    myInput = myInput.trim().toLowerCase()
+    myInput = myInput.trim().toLowerCase();
     // 4. return the results only if the value of the search is included in the person's name
     // we need to write code (a function for filtering through our data to include the search input value)
-  } else {
-    // 5. return nothing
-    // Mostrar un mensaje para indicar que no se encuentra la información
+    const searchResult = searchByTitle(films, myInput);
+    moviesDisplay(searchResult);
+
+  } else{
+    hideWelcome();
+    hideDirector();
+    dataBaseContainer.innerHTML = '';
+    const error = document.createElement('div');
+    error.innerHTML = `<div class="error">
+    <h4 class="movie-title">Búsqueda no encontrada.</h4>
+    <h4 class="movie-title">Por favor intenta con otro título.</h4>
+    <img id="susuwatari" alt="error" src="img/Buttons/susuwatari1.png">
+    </div>
+    `
+    console.log('hola');
+    dataBaseContainer.appendChild(error);
   }
-  const searchResult = searchByTitle(films, myInput);
+ 
   console.log(searchByTitle(films, myInput));
-  console.log(searchResult);
-  moviesDisplay(searchResult);
   
 });
 

@@ -1,4 +1,8 @@
 /*ESTILOS GHIBLIPEDIA*/
+html{
+    margin:0px;
+}
+
 nav {
     text-align: center;
     display: flex;
@@ -19,6 +23,7 @@ body {
     background-size: cover;
     display: flex;
     flex-direction: column;
+    margin: 0;
 }
 
 main {
@@ -125,14 +130,21 @@ header {
     display: flex;
     flex-direction: column;
     width: 100%;
-    flex-wrap: wrap;
     max-width: 800px;
     background: rgba(228, 194, 165, 0.532);
-    border-color: rgba(0, 0, 0, 0.5);
     box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
     border-radius: 10px;
     margin-top: 5%;
     padding: 5%;
+    font-family: 'Londrina Solid';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #4F4E48;
+    margin-bottom: 240px;
 }
 
 
@@ -190,6 +202,7 @@ header {
     border-radius: 15px;
     margin-top: 0%;
     justify-content: center;
+    margin-bottom: 70px;
 }
 
 .welcome-page {
@@ -215,10 +228,11 @@ header {
     margin-top: 0%;
     justify-content: space-evenly;
     padding: 5%;
+    margin-bottom: 70px;
 
 }
 
-.welcome-title {
+.welcome-title, #titulos {
     display: flex;
     justify-content: center;
     font-family: 'Londrina Solid';
@@ -390,7 +404,7 @@ padding: 5px;
     font-family: 'Londrina Solid';
     font-style: normal;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 23px;
     line-height: 20px;
     text-align: right;
     letter-spacing: 0.1em;
@@ -420,4 +434,51 @@ padding: 5px;
 .music-button{
     display:flex;
     flex-direction: row;
+}
+/*.directors{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Londrina Solid';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #4F4E48;
+    padding: 20px;
+    margin-top: -50px;
+}*/
+footer{
+background: #4F4E48;
+display: flex;
+width: 100%;
+justify-content: space-evenly;
+align-items: center;
+height: 50px;
+box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+border: rgba(0, 0, 0, 1);
+width: 100%;
+margin-bottom: 0px;
+z-index: 2;
+font-family: 'Londrina Solid';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 100.5%;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-shadow: #4F4E48;
+    color: #FFF5F5;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+.error{
+    padding: 20px;
+ margin: 50px 0px 100px 0px;
+
+}
+#susuwatari{
+    width: 300px;
 }
