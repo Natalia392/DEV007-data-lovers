@@ -21,31 +21,31 @@ El proyecto Ghiblipedia es un página web desarrollada para usuarios de occident
 
 Para satisfacer las necesidades del usuario se han planteado sus historias de la siguiente manera:
 
-# Historia de usuario 1
+### Historia de usuario 1
 Título:
 Ver la lista de películas del Estudio
 Descripción:
 Como usuario que le gustan las películas de Ghibli quiero visualizar todas las películas que este estudio ha producido para poder conocer cuáles son.
 
-# Historia de usuario 2
+### Historia de usuario 2
 Título:
 Información sobre un personaje favorito
 Descripción:
 Como usuario latinoamericano fan de animación japonesa, quiero visualizar información característica de mi personaje favorito para obtener más información sobre él.
 
-# Historia de usuario 3
+### Historia de usuario 3
 Título:
 Información sobre las localidades de las películas
 Descripción:
 Como usuario interesado en la cultura japonesa, quiero ver las localidades de las películas para disfrutar con sus bellos paisajes.
 
-# Historia de usuario 4
+### Historia de usuario 4
 Título:
 Ordenar data alfabéticamente
 Descripción:
 Como usuario que busca películas de Ghibli quiero ordenar la data alfabéticamente para facilitar la búsqueda de lo que estoy buscando en la lista
 
-# Historia de usuario 5
+### Historia de usuario 5
 Título:
 Ordenar películas por orden alfabético
 Descripción:
