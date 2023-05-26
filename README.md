@@ -24,9 +24,9 @@
 ## 3. Diseños de prototipos de baja y alta fidelidad
 
   ## a. Diseño de baja fidelidad
-
+![](ruta-de-la-imagen.png)
   ## b. Diseño de alta fidelidad
-
+![](ruta-de-la-imagen.png)
 ## 4. Presentación del proyecto
 
 
@@ -43,17 +43,17 @@
 ## 9. Checklist
 
 * [ ] Usa VanillaJS.
-* [ ] Pasa linter (`npm run pretest`)
-* [ ] Pasa tests (`npm test`)
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+* [sí] Pasa linter (`npm run pretest`)
+* [sí] Pasa tests (`npm test`)
+* [sí] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
   lines y branches.
-* [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
+* [sí] Incluye _Definición del producto_ clara e informativa en `README.md`.
+* [sí] Incluye historias de usuario en `README.md`.
 * [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
   `README.md`.
 * [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
   en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
+* [ ] Incluye link a figma en `README.md`.
 * [ ] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
 * [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
