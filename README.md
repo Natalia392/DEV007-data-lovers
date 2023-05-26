@@ -65,7 +65,7 @@ Paleta de colores elegida:
 ![](ruta-de-la-imagen.png)
 Se escogió esta paleta de colores de la película Spirited Away por ser una de las más conocidas y aclamadas por la audiencia, por sus tonos cálidos y amigabilidad y por ser de las más representativas del estudio, ya que estos colores principales que se repiten a lo largo de sus producciones.
 
-  # b. TESTEO DE USABILIDAD
+  ### b. TESTEO DE USABILIDAD
 
 EL USUARIO APRUEBA
 Respecto a la página de entrada, quizá yo pondría ese mismo mensaje pero dando acceso desde ya al buscador y a la barra lateral y todo eso... Para que esté todo ahí mismo y no sea hacer un clic extra para acceder al contenido. Mensaje de bienvenida correcto. Buen tamaño. Paleta correlacionada con las películas. Se ve intuitivo y lindos colores
@@ -85,7 +85,7 @@ En base a los anteriores testimonios de los usuarios se decide aumentar el tama�
 
 ## 4. Presentación del proyecto
 
-
+![](ruta-de-la-imagen.png)
 
 ## 5. Tecnologías utilizadas
 
