@@ -121,12 +121,12 @@ function moviesDisplay(movies) {
       <h3>${movie.title}</h3><br>
       <p>Director: ${movie.director}</p>
       <p>Producer: ${movie.producer}</p>
-      <p>Release_date: ${movie.release_date}</p>
-      <p>rt_score: ${movie.rt_score}</p>
+      <p>Release date: ${movie.release_date}</p>
+      <p>Rating score: ${movie.rt_score}</p>
       </div>
       </div>
       <div class="movie-div3">
-      <p>Description: ${movie.description}</p>
+      <p>${movie.description}</p>
     `
       dataBaseContainer.appendChild(cardInfo);
 
@@ -301,7 +301,7 @@ directorButton.addEventListener('click', (event) => {
   console.log(directors);
   //const arrayDirectors = directors.split(',')
   const titleDirector = document.getElementById('titulos');
-  titleDirector.innerHTML = "Director";
+  titleDirector.innerHTML = "Directores";
   directors.forEach((director) => {
     //Crea el div
     directorBox.innerHTML += `

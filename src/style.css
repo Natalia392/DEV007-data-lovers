@@ -128,9 +128,8 @@ header {
 #director-box {
     display: flex;
     flex-direction: column;
-    width: 600px;
     flex-wrap: wrap;
-    width: 800px;
+    width: 500px;
     background: rgba(228, 194, 165, 0.532);
     border-color: rgba(0, 0, 0, 0.5);
     box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
@@ -140,12 +139,12 @@ header {
     font-family: 'Londrina Solid';
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 20px;
     text-align: center;
     letter-spacing: 0.05em;
     margin-left: 5%;
-    margin-right: 5%;
+    margin-right: 15%;
     color: #4F4E48;
 }
 
