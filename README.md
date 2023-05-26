@@ -24,7 +24,7 @@
 ## 3. Diseños de prototipos de baja y alta fidelidad
 
   ## a. Diseño de baja fidelidad
-![](ruta-de-la-imagen.png)
+![]([ruta-de-la-imagen.png](https://drive.google.com/file/d/1sNj9AHHOjoh66qudChOYUZ6r7g_-3odh/view?usp=drive_link))
   ## b. Diseño de alta fidelidad
 ![](ruta-de-la-imagen.png)
 ## 4. Presentación del proyecto
