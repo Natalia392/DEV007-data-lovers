@@ -322,7 +322,7 @@ directorButton.addEventListener('click', (event) => {
 
 //Click del search bar
 searchButton.addEventListener('click', (/*event*/) => {
-
+  hideWelcome();
   let myInput = searchInput.value;
   // 1. declare and assign the value of the event's target to a variable AKA whatever is typed in the search bar
   //let inputValue = event.target.value
@@ -330,18 +330,30 @@ searchButton.addEventListener('click', (/*event*/) => {
 
   // 2. check: if input exists and if input is larger than 0
   if (myInput && myInput.trim().length > 0) {
+    hideDirector();
     // 3. redefine 'value' to exclude white space and change input to all lowercase
-    myInput = myInput.trim().toLowerCase()
+    myInput = myInput.trim().toLowerCase();
     // 4. return the results only if the value of the search is included in the person's name
     // we need to write code (a function for filtering through our data to include the search input value)
-  } else {
-    // 5. return nothing
-    // Mostrar un mensaje para indicar que no se encuentra la información
+    const searchResult = searchByTitle(films, myInput);
+    moviesDisplay(searchResult);
+
+  } else{
+    hideWelcome();
+    hideDirector();
+    dataBaseContainer.innerHTML = '';
+    const error = document.createElement('div');
+    error.innerHTML = `<div class="error">
+    <h4 class="movie-title">Búsqueda no encontrada.</h4>
+    <h4 class="movie-title">Por favor intenta con otro título.</h4>
+    <img id="susuwatari" alt="error" src="img/Buttons/susuwatari1.png">
+    </div>
+    `
+    console.log('hola');
+    dataBaseContainer.appendChild(error);
   }
-  const searchResult = searchByTitle(films, myInput);
+ 
   console.log(searchByTitle(films, myInput));
-  console.log(searchResult);
-  moviesDisplay(searchResult);
   
 });
 
