@@ -67,15 +67,15 @@ Se escogió esta paleta de colores de la película Spirited Away por ser una de 
 
   ### b. TESTEO DE USABILIDAD
 
-EL USUARIO APRUEBA
+  EL USUARIO APRUEBA
 Respecto a la página de entrada, quizá yo pondría ese mismo mensaje pero dando acceso desde ya al buscador y a la barra lateral y todo eso... Para que esté todo ahí mismo y no sea hacer un clic extra para acceder al contenido. Mensaje de bienvenida correcto. Buen tamaño. Paleta correlacionada con las películas. Se ve intuitivo y lindos colores
 
-EL USUARIO SOLICITA MODIFICACIÓN
+  EL USUARIO SOLICITA MODIFICACIÓN
 Ese diseño está genial, solo que las miniaturas se ven muy miniaturas.
 La página me molesta a la vista porque tiene mucha información (imágen de fondo). Quizás el color café con letras blancas no porque hay gente con visión más limitada, entonces  se pierde un poco su contenido.
 Sí,  yo quiero ver todos los paisajes de las películas ghibli.
 
-SOLUCIÓN DE DISEÑO
+  SOLUCIÓN DE DISEÑO
 En base a los anteriores testimonios de los usuarios se decide aumentar el tamaño de los contenedores, imágenes y títulos, reemplazar el color de la tipografía del mensaje de inicio reemplazando blanco por café oscuro con un poco de opacidades. 
 
   ## c. Diseños de alta fidelidad
