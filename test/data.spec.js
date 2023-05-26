@@ -1,8 +1,7 @@
-// eslint-disable-next-line no-unused-vars
+
 import { filterCharacter, filterLocalities, filterDirector, orderDataAZ, searchByTitle } from '../src/data.js';
 
 
-// eslint-disable-next-line no-unused-vars
 const data = [
   {
     "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
@@ -240,7 +239,6 @@ const data = [
     "vehicles": []
   }
 ]
-// eslint-disable-next-line no-unused-vars
 const dataCharacters = [
   {
     "name": "Pazu",
@@ -402,7 +400,6 @@ describe('filterLocalities', () => {
   });
 });
 
-/*
 describe('filterDirector', () => {
   it('es una función', () => {
     expect(typeof filterDirector).toBe('function');
@@ -428,9 +425,9 @@ describe('filterDirector', () => {
   });
   /*it('returns `anotherExample`', () => {
     expect(anotherExample()).toBe('OMG');
-  });
+  });*/
 });
-*/
+
 
 describe('searchByTitle', () => {
   it('es una función', () => {
