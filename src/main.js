@@ -13,6 +13,7 @@ const directors = filterDirector(films);
 console.log(directors);
 const localities = filterLocalities(films);
 const characters = filterCharacter(films);
+console.log(characters);
 
 console.log(filterCharacter(films));
 console.log(calcData(films))
