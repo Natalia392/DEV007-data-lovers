@@ -128,10 +128,9 @@ header {
 #director-box {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    width: 500px;
+    width: 100%;
+    max-width: 800px;
     background: rgba(228, 194, 165, 0.532);
-    border-color: rgba(0, 0, 0, 0.5);
     box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
     border-radius: 10px;
     margin-top: 5%;
@@ -143,8 +142,6 @@ header {
     line-height: 20px;
     text-align: center;
     letter-spacing: 0.05em;
-    margin-left: 5%;
-    margin-right: 15%;
     color: #4F4E48;
 }
 
@@ -194,20 +191,15 @@ header {
 
 #database-container {
     display: flex;
-    align-content: space-evenly;
-    width: 800px;
-    max-width: 800px;
-    min-width: 200px;
     flex-wrap: wrap;
     width: 100%;
+    max-width: 800px;
+    min-width: 200px;
     background: rgba(228, 194, 165, 0.732);
-    border-width: 0px 2px 2px 0px;
-    border-style: solid;
-    border-color: rgba(0, 0, 0, 0.5);
     box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
     border-radius: 15px;
     margin-top: 0%;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .welcome-page {
