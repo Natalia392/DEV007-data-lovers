@@ -58,7 +58,7 @@ Como usuario que busca información sobre películas de Ghibli, quiero ordenar p
 
 Aquí se presenta el trabajo realizado en figma
 
-[http://www.figma.com/file/WwbYjvjnmNZ5orvwl2ey4U/Untitled?type=design&node-id=0%3A1&t=DKRrDAELSdlNlDi1-1/]
+http://www.figma.com/file/WwbYjvjnmNZ5orvwl2ey4U/Untitled?type=design&node-id=0%3A1&t=DKRrDAELSdlNlDi1-1/
 
 ## 3. Diseños de prototipos de baja y alta fidelidad
 
