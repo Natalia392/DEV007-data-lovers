@@ -56,10 +56,8 @@ Como usuario que busca información sobre películas de Ghibli, quiero ordenar p
 ## 3. Diseños de prototipos de baja y alta fidelidad
 
   ## a. Diseños de baja fidelidad
-Prototipo welcome page de baja fidelidad
-![](./src/img/GHIBLIPEDIA low.png)
-Prototipo movies page de baja fidelidad
-![](ruta-de-la-imagen.png)
+Prototipo welcome page de baja fidelidad y prototipo movies page de baja fidelidad
+![](./src/img/GHIBLIPEDIA-low.png)
 
 ### Paleta de colores elegida:
 
@@ -67,10 +65,7 @@ Prototipo movies page de baja fidelidad
 
 Se escogió esta paleta de colores de la película Spirited Away por ser una de las más conocidas y aclamadas por la audiencia, por sus tonos cálidos y amigabilidad y por ser de las más representativas del estudio, ya que estos colores principales que se repiten a lo largo de sus producciones.
 
-
-
-
-  ### b. TESTEO DE USABILIDAD
+  ### b. Testeo de usabilidad y progresión de media a alta fidelidad
 
   EL USUARIO APRUEBA
 Respecto a la página de entrada, quizá yo pondría ese mismo mensaje pero dando acceso desde ya al buscador y a la barra lateral y todo eso... Para que esté todo ahí mismo y no sea hacer un clic extra para acceder al contenido. Mensaje de bienvenida correcto. Buen tamaño. Paleta correlacionada con las películas. Se ve intuitivo y lindos colores
@@ -83,18 +78,31 @@ Sí,  yo quiero ver todos los paisajes de las películas ghibli.
   SOLUCIÓN DE DISEÑO
 En base a los anteriores testimonios de los usuarios se decide aumentar el tamaño de los contenedores, imágenes y títulos, reemplazar el color de la tipografía del mensaje de inicio reemplazando blanco por café oscuro con un poco de opacidades. 
 
-  ## c. Diseños de alta fidelidad
+Aquí se puede ver el proceso:
+![](./src/img/GHIBLIPEDIA-medium.png)
+
+  ## c. Diseños finales de alta fidelidad
+ Finalmente estos fueron los prototipos de alta fidelidad a los que llegamos:
+ 
  Prototipo welcome page de media fidelidad
 ![](./src/img/imagen-pagina-web.png)
-![](ruta-de-la-imagen.png)
+
+Prototipo para celulares
+![](./src/img/GHIBLIPEDIA-MOBILE-VIEW.png)
+
+Prototipo para tablet
+![](./src/img/GHIBLIPEDIA-TABLET-VIEW.png)
 
 ## 4. Presentación del proyecto
 
-![](ruta-de-la-imagen.png)
+Finalmente, la página desarrollada. 
+Cada botón lleva a las distintas secciones: muestra todas las películas desde el botón de películas, todos los personajes desde el botón de personajes, todas las localidades al apretar su respectivo botón y los directores que han trabajado con el estudio.
+![](./src/img/imagen-pagina-web.png)
 
 ## 5. Tecnologías utilizadas
 
-
+![](ruta-de-la-imagen.png)
+![](ruta-de-la-imagen.png)
 
 ## 7. Colaboraciones
 
