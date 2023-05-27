@@ -57,13 +57,18 @@ Como usuario que busca información sobre películas de Ghibli, quiero ordenar p
 
   ## a. Diseños de baja fidelidad
 Prototipo welcome page de baja fidelidad
-![](ruta-de-la-imagen.png)
+![](./src/img/GHIBLIPEDIA low.png)
 Prototipo movies page de baja fidelidad
 ![](ruta-de-la-imagen.png)
 
-Paleta de colores elegida:
-![](ruta-de-la-imagen.png)
+### Paleta de colores elegida:
+
+![](./src/img/ghiblipedia-color-palette.png)
+
 Se escogió esta paleta de colores de la película Spirited Away por ser una de las más conocidas y aclamadas por la audiencia, por sus tonos cálidos y amigabilidad y por ser de las más representativas del estudio, ya que estos colores principales que se repiten a lo largo de sus producciones.
+
+
+
 
   ### b. TESTEO DE USABILIDAD
 
