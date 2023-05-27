@@ -1,6 +1,6 @@
 /*ESTILOS GHIBLIPEDIA*/
-html{
-    margin:0px;
+html {
+    margin: 0px;
 }
 
 nav {
@@ -76,7 +76,8 @@ header {
     height: 50px;
     opacity: 90;
 }
-#sincara-button{
+
+#sincara-button {
     width: 100px;
     height: 40px;
     background: #7860a1d2;
@@ -95,7 +96,8 @@ header {
     color: #FFF5F5;
     cursor: pointer;
 }
-#sincara-button:hover{
+
+#sincara-button:hover {
     cursor: pointer;
     background-color: #4F4E48;
     color: #aa7bf5;
@@ -150,7 +152,7 @@ header {
 
 .character-name,
 .movie-title,
-.local-name{
+.local-name {
     font-family: 'Londrina Solid';
     font-style: normal;
     font-weight: 400px;
@@ -212,7 +214,7 @@ header {
 }
 
 .welcome-container {
-       display: flex;
+    display: flex;
     align-content: space-evenly;
     width: 800px;
     max-width: 800px;
@@ -232,7 +234,8 @@ header {
 
 }
 
-.welcome-title, #titulos {
+.welcome-title,
+#titulos {
     display: flex;
     justify-content: center;
     font-family: 'Londrina Solid';
@@ -374,6 +377,7 @@ header {
     color: #FFF5F5;
     cursor: pointer;
 }
+
 #order-select:hover {
     cursor: pointer;
     background-color: #4F4E48;
@@ -382,12 +386,12 @@ header {
 }
 
 .movie-div1 {
-display: flex;
-flex-wrap: wrap;
-padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
 }
 
-.movie-poster-card{
+.movie-poster-card {
     width: 280px;
     height: 400px;
     display: flex;
@@ -396,9 +400,9 @@ padding: 5px;
     cursor: pointer;
     object-fit: cover;
     box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
-}   
+}
 
-.movie-info{
+.movie-info {
     display: flex;
     flex-direction: column;
     font-family: 'Londrina Solid';
@@ -414,7 +418,7 @@ padding: 5px;
 
 }
 
-.movie-div3{
+.movie-div3 {
     display: flex;
     flex-direction: column;
     font-family: 'Londrina Solid';
@@ -431,10 +435,12 @@ padding: 5px;
     margin-top: -50px;
 
 }
-.music-button{
-    display:flex;
+
+.music-button {
+    display: flex;
     flex-direction: row;
 }
+
 /*.directors{
     display: flex;
     flex-direction: column;
@@ -451,19 +457,19 @@ padding: 5px;
     padding: 20px;
     margin-top: -50px;
 }*/
-footer{
-background: #4F4E48;
-display: flex;
-width: 100%;
-justify-content: space-evenly;
-align-items: center;
-height: 50px;
-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
-border: rgba(0, 0, 0, 1);
-width: 100%;
-margin-bottom: 0px;
-z-index: 2;
-font-family: 'Londrina Solid';
+footer {
+    background: #4F4E48;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50px;
+    box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0), 7px 7px 20px 0px rgba(0, 0, 0, .5), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    border: rgba(0, 0, 0, 1);
+    width: 100%;
+    margin-bottom: 0px;
+    z-index: 2;
+    font-family: 'Londrina Solid';
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
@@ -472,13 +478,15 @@ font-family: 'Londrina Solid';
     letter-spacing: 0.1em;
     text-shadow: #4F4E48;
     color: #FFF5F5;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.error{
+
+.error {
     padding: 20px;
- margin: 50px 0px 100px 0px;
+    margin: 50px 0px 100px 0px;
 
 }
-#susuwatari{
+
+#susuwatari {
     width: 300px;
 }
