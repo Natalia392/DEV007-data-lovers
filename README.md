@@ -61,16 +61,14 @@ Aquí se presenta el trabajo realizado en figma
 http://www.figma.com/file/WwbYjvjnmNZ5orvwl2ey4U/Untitled?type=design&node-id=0%3A1&t=DKRrDAELSdlNlDi1-1/
 
 ## 3. Diseños de prototipos de baja y alta fidelidad
-
   ## a. Diseños de baja fidelidad
 Prototipo welcome page de baja fidelidad y prototipo movies page de baja fidelidad
 ![](./src/img/GHIBLIPEDIA-low.png)
-
 ### Paleta de colores elegida:
 
 ![](./src/img/ghiblipedia-color-palette.png)
 
-Se escogió esta paleta de colores de la película Spirited Away por ser una de las más conocidas y aclamadas por la audiencia, por sus tonos cálidos y amigabilidad y por ser de las más representativas del estudio, ya que estos colores principales que se repiten a lo largo de sus producciones.
+Se escogió esta paleta de colores de la película Spirited Away por ser una de las más conocidas y aclamadas por la audiencia, por sus tonos cálidos y amigabilidad y por ser de las más representativas del estudio, ya que esta gama de son los que se repiten a lo largo de sus producciones.
 
   ### b. Testeo de usabilidad y progresión de media a alta fidelidad
 
