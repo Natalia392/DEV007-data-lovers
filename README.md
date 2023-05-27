@@ -18,6 +18,11 @@
 El proyecto Ghiblipedia es un página web desarrollada para usuarios de occidente que aman? disfrutan? las producciones de Studio Ghibli, ya sea por sus historias, animaciones, lecciones de vida, música entre otros ámbitos. En esta página el usuario podrá vivir la experiencia Ghiblipedia al encontrar información más detallada sobre sus películas favoritas, incluyendo sus personajes y localidades, acompañado de una de las composiciones musicales más icónicas del estudio .
 
 ## 2. Historias de Usuario
+### Encuesta previa
+Con el fin de recabar información respecto a lo que los usuarios podrían necesitar de una web con temática del Studio Ghibli, se plantearon las siguientes preguntas orientadas a aquellas personas que disfruten de sus producciones. Las pregunta y sus respuestas y estadísticas son las siguientes:
+
+![](./src/img/GHIBLIPEDIA-encuesta.png)
+![](./src/img/GHIBLIPEDIA-encuesta2.png)
 
 Para satisfacer las necesidades del usuario se han planteado sus historias de la siguiente manera:
 
@@ -51,8 +56,8 @@ Ordenar películas por orden alfabético
 Descripción:
 Como usuario que busca información sobre películas de Ghibli, quiero ordenar por release date las películas para ver encontrarlas con más facilidad
 
-[Aquí]: http://www.figma.com/file/WwbYjvjnmNZ5orvwl2ey4U/Untitled?type=design&node-id=0%3A1&t=DKRrDAELSdlNlDi1-1/ presentamos el trabajo realizado en figma
- 
+[ http://www.figma.com/file/WwbYjvjnmNZ5orvwl2ey4U/Untitled?type=design&node-id=0%3A1&t=DKRrDAELSdlNlDi1-1/][Aquí se presenta el trabajo realizado en figma]
+
 ## 3. Diseños de prototipos de baja y alta fidelidad
 
   ## a. Diseños de baja fidelidad
@@ -101,31 +106,29 @@ Cada botón lleva a las distintas secciones: muestra todas las películas desde 
 
 ## 5. Tecnologías utilizadas
 
-![](ruta-de-la-imagen.png)
-![](ruta-de-la-imagen.png)
+Este proyecto fué desarrollado exclusivamente con Vanilla Javascript, esto es, HTML para su estructura, CSS para su diseño, Javascript para sus funcionalidades. 
 
-## 7. Colaboraciones
+## 6. Colaboraciones
 
+Sus colaboradoras Javiera Gandarillas, encargada principalmente de guiar el diseño en CSS y Natalia Torrejón guiando las funcionalidades. Cabe mencionar que ambas partes colaboran activamente en cada uno de los procesos de construcción de esta web.
 
-## 8. Colaboraciones
+## 7. Checklist
 
-## 9. Checklist
-
-* [ ] Usa VanillaJS.
+* [sí] Usa VanillaJS.
 * [sí] Pasa linter (`npm run pretest`)
 * [sí] Pasa tests (`npm test`)
 * [sí] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
   lines y branches.
 * [sí] Incluye _Definición del producto_ clara e informativa en `README.md`.
 * [sí] Incluye historias de usuario en `README.md`.
-* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+* [sí] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
   `README.md`.
-* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+* [sí] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
   en `README.md`.
-* [ ] Incluye link a figma en `README.md`.
-* [ ] Incluye el listado de problemas que detectaste a través de tests de
+* [sí] Incluye link a figma en `README.md`.
+* [sí] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
+* [sí] UI: Muestra lista y/o tabla con datos y/o indicadores.
+* [sí] UI: Permite ordenar data por uno o más campos (asc y desc).
+* [sí] UI: Permite filtrar data en base a una condición.
 * [ ] UI: Es _responsive_.
